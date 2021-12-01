@@ -30,3 +30,14 @@ jobs:
       run: mix test
     - name: Generate documentation
       run: mix docs
+    - name: GitHub Pages
+      # You may pin to the exact commit or the version.
+      # uses: crazy-max/ghaction-github-pages@db4476a01402e1a7ce05f41832040eef16d14925
+      uses: crazy-max/ghaction-github-pages@v2.5.0
+      with:
+        # Build directory to deploy
+        build_dir: doc/
+        # If enabled, nothing will be pushed
+        dry_run: true
+        # Enable verbose output
+        verbose: true
