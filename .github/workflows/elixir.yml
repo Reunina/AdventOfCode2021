@@ -35,6 +35,7 @@ jobs:
       # uses: crazy-max/ghaction-github-pages@db4476a01402e1a7ce05f41832040eef16d14925
       uses: crazy-max/ghaction-github-pages@v2.5.0
       with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         # Build directory to deploy
         build_dir: doc/
         # Enable verbose output
