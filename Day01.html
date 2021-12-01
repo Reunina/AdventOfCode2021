@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="advent_of_code_2021 v0.1.0">
+
+    <title>Day01 — advent_of_code_2021 v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
+
+    <script src="dist/sidebar_items-55b14dd523.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a404e1e870b77c874f9e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+advent_of_code_2021
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </strong>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Day01</span> 
+  <small class="app-vsn" translate="no">(advent_of_code_2021 v0.1.0)</small>
+
+
+</h1>
+
+
+  <section id="moduledoc">
+<h1>--- Sonar Sweep ---</h1><p>You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!</p><p>Before you know it, you're inside a submarine the Elves keep ready for situations like this. It's covered in Christmas lights (because of course it is), and it even has an experimental antenna that should be able to track the keys if you can boost its signal strength high enough; there's a little meter that indicates the antenna's signal strength by displaying 0-50 stars.</p><p>Your instincts tell you that in order to save Christmas, you'll need to get all fifty stars by December 25th.</p><p>Collect stars by solving puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants one star. Good luck!</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#part_01/1" translate="no">part_01(input)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>As the submarine drops below the surface of the ocean, it automatically performs a sonar sweep of the nearby sea floor. On a small screen, the sonar sweep report (your puzzle input) appears: each line is a measurement of the sea floor depth as the sweep looks further and further away from the submarine.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#part_02/1" translate="no">part_02(input)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Considering every single measurement isn't as useful as you expected: there's just too much noise in the data.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="part_01/1">
+
+  <div class="detail-header">
+    <a href="#part_01/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">part_01(input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>As the submarine drops below the surface of the ocean, it automatically performs a sonar sweep of the nearby sea floor. On a small screen, the sonar sweep report (your puzzle input) appears: each line is a measurement of the sea floor depth as the sweep looks further and further away from the submarine.</p><p>For example, suppose you had the following report:</p><pre><code class="makeup elixir"><span class="w">  </span><span class="mi">199</span><span class="w">
+  </span><span class="mi">200</span><span class="w">
+  </span><span class="mi">208</span><span class="w">
+  </span><span class="mi">210</span><span class="w">
+  </span><span class="mi">200</span><span class="w">
+  </span><span class="mi">207</span><span class="w">
+  </span><span class="mi">240</span><span class="w">
+  </span><span class="mi">269</span><span class="w">
+  </span><span class="mi">260</span><span class="w">
+  </span><span class="mi">263</span></code></pre><p>This report indicates that, scanning outward from the submarine, the sonar sweep found depths of 199, 200, 208, 210, and so on.</p><p>The first order of business is to figure out how quickly the depth increases, just so you know what you're dealing with - you never know if the keys will get carried into deeper water by an ocean current or a fish or something.</p><p>To do this, count the number of times a depth measurement increases from the previous measurement. (There is no measurement before the first measurement.) In the example above, the changes are as follows:</p><pre><code class="makeup elixir"><span class="mi">199</span><span class="w"> </span><span class="p" data-group-id="7234742631-1">(</span><span class="nc">N</span><span class="o">/</span><span class="nc">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="n">measurement</span><span class="p" data-group-id="7234742631-1">)</span><span class="w">
+</span><span class="mi">200</span><span class="w"> </span><span class="p" data-group-id="7234742631-2">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-2">)</span><span class="w">
+</span><span class="mi">208</span><span class="w"> </span><span class="p" data-group-id="7234742631-3">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-3">)</span><span class="w">
+</span><span class="mi">210</span><span class="w"> </span><span class="p" data-group-id="7234742631-4">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-4">)</span><span class="w">
+</span><span class="mi">200</span><span class="w"> </span><span class="p" data-group-id="7234742631-5">(</span><span class="n">decreased</span><span class="p" data-group-id="7234742631-5">)</span><span class="w">
+</span><span class="mi">207</span><span class="w"> </span><span class="p" data-group-id="7234742631-6">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-6">)</span><span class="w">
+</span><span class="mi">240</span><span class="w"> </span><span class="p" data-group-id="7234742631-7">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-7">)</span><span class="w">
+</span><span class="mi">269</span><span class="w"> </span><span class="p" data-group-id="7234742631-8">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-8">)</span><span class="w">
+</span><span class="mi">260</span><span class="w"> </span><span class="p" data-group-id="7234742631-9">(</span><span class="n">decreased</span><span class="p" data-group-id="7234742631-9">)</span><span class="w">
+</span><span class="mi">263</span><span class="w"> </span><span class="p" data-group-id="7234742631-10">(</span><span class="n">increased</span><span class="p" data-group-id="7234742631-10">)</span></code></pre><p>In this example, there are <em>7 measurements that are larger than the previous measurement.</em></p><h2 id="part_01/1-how-many-measurements-are-larger-than-the-previous-measurement" class="section-heading">
+  <a href="#part_01/1-how-many-measurements-are-larger-than-the-previous-measurement" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  How many measurements are larger than the previous measurement?
+</h2>
+
+  </section>
+</section>
+<section class="detail" id="part_02/1">
+
+  <div class="detail-header">
+    <a href="#part_02/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">part_02(input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Considering every single measurement isn't as useful as you expected: there's just too much noise in the data.</p><p>Instead, consider sums of a three-measurement sliding window. Again considering the above example:</p><pre><code class="makeup elixir"><span class="mi">199</span><span class="w">  </span><span class="nc">A</span><span class="w">
+</span><span class="mi">200</span><span class="w">  </span><span class="nc">A</span><span class="w"> </span><span class="nc">B</span><span class="w">
+</span><span class="mi">208</span><span class="w">  </span><span class="nc">A</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="nc">C</span><span class="w">
+</span><span class="mi">210</span><span class="w">    </span><span class="nc">B</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="nc">D</span><span class="w">
+</span><span class="mi">200</span><span class="w">  </span><span class="nc">E</span><span class="w">   </span><span class="nc">C</span><span class="w"> </span><span class="nc">D</span><span class="w">
+</span><span class="mi">207</span><span class="w">  </span><span class="nc">E</span><span class="w"> </span><span class="nc">F</span><span class="w">   </span><span class="nc">D</span><span class="w">
+</span><span class="mi">240</span><span class="w">  </span><span class="nc">E</span><span class="w"> </span><span class="nc">F</span><span class="w"> </span><span class="nc">G</span><span class="w">
+</span><span class="mi">269</span><span class="w">    </span><span class="nc">F</span><span class="w"> </span><span class="nc">G</span><span class="w"> </span><span class="nc">H</span><span class="w">
+</span><span class="mi">260</span><span class="w">      </span><span class="nc">G</span><span class="w"> </span><span class="nc">H</span><span class="w">
+</span><span class="mi">263</span><span class="w">        </span><span class="nc">H</span></code></pre><p>Start by comparing the first and second three-measurement windows. The measurements in the first window are marked A (199, 200, 208); their sum is 199 + 200 + 208 = 607. The second window is marked B (200, 208, 210); its sum is 618. The sum of measurements in the second window is larger than the sum of the first, so this first comparison increased.</p><p>Your goal now is to count the number of times the sum of measurements in this sliding window increases from the previous sum. So, compare A with B, then compare B with C, then C with D, and so on. Stop when there aren't enough measurements left to create a new three-measurement sum.</p><p>In the above example, the sum of each three-measurement window is as follows:</p><pre><code class="makeup elixir"><span class="ss">A</span><span class="p">:</span><span class="w"> </span><span class="mi">607</span><span class="w"> </span><span class="p" data-group-id="2949892206-1">(</span><span class="nc">N</span><span class="o">/</span><span class="nc">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="n">sum</span><span class="p" data-group-id="2949892206-1">)</span><span class="w">
+</span><span class="ss">B</span><span class="p">:</span><span class="w"> </span><span class="mi">618</span><span class="w"> </span><span class="p" data-group-id="2949892206-2">(</span><span class="n">increased</span><span class="p" data-group-id="2949892206-2">)</span><span class="w">
+</span><span class="ss">C</span><span class="p">:</span><span class="w"> </span><span class="mi">618</span><span class="w"> </span><span class="p" data-group-id="2949892206-3">(</span><span class="n">no</span><span class="w"> </span><span class="n">change</span><span class="p" data-group-id="2949892206-3">)</span><span class="w">
+</span><span class="ss">D</span><span class="p">:</span><span class="w"> </span><span class="mi">617</span><span class="w"> </span><span class="p" data-group-id="2949892206-4">(</span><span class="n">decreased</span><span class="p" data-group-id="2949892206-4">)</span><span class="w">
+</span><span class="ss">E</span><span class="p">:</span><span class="w"> </span><span class="mi">647</span><span class="w"> </span><span class="p" data-group-id="2949892206-5">(</span><span class="n">increased</span><span class="p" data-group-id="2949892206-5">)</span><span class="w">
+</span><span class="ss">F</span><span class="p">:</span><span class="w"> </span><span class="mi">716</span><span class="w"> </span><span class="p" data-group-id="2949892206-6">(</span><span class="n">increased</span><span class="p" data-group-id="2949892206-6">)</span><span class="w">
+</span><span class="ss">G</span><span class="p">:</span><span class="w"> </span><span class="mi">769</span><span class="w"> </span><span class="p" data-group-id="2949892206-7">(</span><span class="n">increased</span><span class="p" data-group-id="2949892206-7">)</span><span class="w">
+</span><span class="ss">H</span><span class="p">:</span><span class="w"> </span><span class="mi">792</span><span class="w"> </span><span class="p" data-group-id="2949892206-8">(</span><span class="n">increased</span><span class="p" data-group-id="2949892206-8">)</span></code></pre><p>In this example, there are 5 sums that are larger than the previous sum.</p><h2 id="part_02/1-consider-sums-of-a-three-measurement-sliding-window-how-many-sums-are-larger-than-the-previous-sum" class="section-heading">
+  <a href="#part_02/1-consider-sums-of-a-three-measurement-sliding-window-how-many-sums-are-larger-than-the-previous-sum" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
+</h2>
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
