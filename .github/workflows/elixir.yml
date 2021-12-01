@@ -37,7 +37,5 @@ jobs:
       with:
         # Build directory to deploy
         build_dir: doc/
-        # If enabled, nothing will be pushed
-        dry_run: true
         # Enable verbose output
         verbose: true
