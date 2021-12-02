@@ -89,14 +89,24 @@ defmodule Mix.Tasks.Create do
       test "day #{day} part 1" do
         assert 0 =
              @test_input
-             |> FileReader.read_file(:as_int)
+             |> FileReader.read_file()
+             |> Day.part_01()
+
+        assert 0 =
+             @real_input
+             |> FileReader.read_file()
              |> Day.part_01()
       end
 
       test "day #{day} part 2" do
         assert 0 =
                @test_input
-               |> FileReader.read_file(:as_int)
+               |> FileReader.read_file()
+               |> Day.part_02()
+
+        assert 0 =
+               @real_input
+               |> FileReader.read_file()
                |> Day.part_02()
       end
     end
@@ -129,13 +139,15 @@ defmodule Mix.Tasks.Create do
     {:ok, {{'HTTP/1.1', 200, 'OK'}, _, input}} =
       :httpc.request(
         :get,
-        {'https://adventofcode.com/#{year}/day/#{day}/input', headers()},
+        {'https://adventofcode.com/#{year}/day/#{day |> Integer.parse() |> elem(0)}/input',
+         headers()},
         [],
         []
       )
-      input
+
+    input
   end
 
   defp headers,
-       do: [{'cookie', String.to_charlist("session=" <> System.get_env("AOC_KEY"))}]
+    do: [{'cookie', String.to_charlist("session=" <> System.get_env("AOC_KEY"))}]
 end
