@@ -1,6 +1,23 @@
 defmodule Mix.Tasks.Create do
-  @moduledoc "Create All files for an Advent of code's day puzzle"
+  @moduledoc "Create All files for an Advent of code's day puzzle and download puzzle input"
   use Mix.Task
+
+  @doc """
+
+  ## Example
+
+
+   ```
+  mix create "02"
+  #   * creating inputs/day_02.txt
+  #   * creating inputs/tests/day_02.txt
+  #   * creating test/day02_test.exs
+  #   * creating lib/day02.ex
+
+
+   ```
+
+  """
 
   def run(days) do
     days
