@@ -26,7 +26,7 @@ defmodule FileReader do
   """
   def read_file(file_name, output_format)
 
-  def read_file(file_name, :as_list_string_int) do
+  def read_file(file_name, :as_string_and_int) do
     File.stream!(file_name)
     |> Enum.map(fn line -> String.split(line) end)
     |> Enum.map(fn [a, b] -> [a, b |> Integer.parse() |> elem(0)] end)
@@ -44,6 +44,6 @@ defmodule FileReader do
   """
   def read_file(file_name) do
     File.stream!(file_name)
-    |> Enum.map(fn line -> String.trim(line) end)
+    |> Enum.map(&String.trim/1)
   end
 end
