@@ -3,7 +3,6 @@ Day01.html
 Day02.html
 Day03.html
 Day04.html
-Day05.html
 FileReader.html
 Mix.Tasks.Create.html
 api-reference.html
@@ -13,7 +12,7 @@ dist/html/fonts/icomoon.eot
 dist/html/fonts/icomoon.svg
 dist/html/fonts/icomoon.ttf
 dist/html/fonts/icomoon.woff
-dist/search_items-6479b03de7.js
-dist/sidebar_items-1bf0bd64d0.js
+dist/search_items-1da4fb0190.js
+dist/sidebar_items-186940b0b2.js
 index.html
 search.html
