@@ -13,11 +13,13 @@ defmodule Day05Test do
       assert 5 =
                @test_input
                |> FileReader.read_file()
+               |> Enum.to_list()
                |> Day.part_01()
 
       assert 5698 =
                @real_input
                |> FileReader.read_file()
+               |> Enum.to_list()
                |> Day.part_01()
     end
 
@@ -25,11 +27,13 @@ defmodule Day05Test do
       assert 12 =
                @test_input
                |> FileReader.read_file()
+               |> Enum.to_list()
                |> Day.part_02()
 
       assert 15463 =
                @real_input
                |> FileReader.read_file()
+               |> Enum.to_list()
                |> Day.part_02()
     end
   end
@@ -58,9 +62,10 @@ defmodule Day05Test do
                |> Day.format_to_line_segments()
                |> Day.keep_horizontal_and_vertical_lines()
     end
+
     test "generate all points from input  " do
-      #An entry like 1,1 -> 1,3 covers points 1,1, 1,2, and 1,3.
-      #An entry like 9,7 -> 7,7 covers points 9,7, 8,7, and 7,7.
+      # An entry like 1,1 -> 1,3 covers points 1,1, 1,2, and 1,3.
+      # An entry like 9,7 -> 7,7 covers points 9,7, 8,7, and 7,7.
       assert [[{1, 1}, {1, 2}, {1, 3}]] =
                ["1,1 -> 1,3"]
                |> Day.format_to_line_segments()
@@ -73,57 +78,51 @@ defmodule Day05Test do
                |> Day.keep_horizontal_and_vertical_lines()
                |> Day.generate_all_wind_points()
 
-      assert  [
-                [
-                  {0, 9},
-                  {1, 9},
-                  {2, 9},
-                  {3, 9},
-                  {4, 9},
-                  {5, 9}
-                ],
-                [
-                  {9, 4},
-                  {8, 4},
-                  {7, 4},
-                  {6, 4},
-                  {5, 4},
-                  {4, 4},
-                  {3, 4}
-                ]
-              ]
-              =
+      assert [
+               [
+                 {0, 9},
+                 {1, 9},
+                 {2, 9},
+                 {3, 9},
+                 {4, 9},
+                 {5, 9}
+               ],
+               [
+                 {9, 4},
+                 {8, 4},
+                 {7, 4},
+                 {6, 4},
+                 {5, 4},
+                 {4, 4},
+                 {3, 4}
+               ]
+             ] =
                ["0,9 -> 5,9", "8,0 -> 0,8", " 9,4 -> 3,4"]
                |> Day.format_to_line_segments()
                |> Day.keep_horizontal_and_vertical_lines()
                |> Day.generate_all_wind_points()
-
-
     end
   end
 
   describe "Day 05 part02 should:" do
-
     test "only consider horizontal and vertical and diags lines " do
-      assert  [
-                [x1: 0, y1: 9, x2: 5, y2: 9],
-                [x1: 8, y1: 0, x2: 0, y2: 8],
-                [x1: 9, y1: 4, x2: 3, y2: 4]
-              ]
-              =
+      assert [
+               [x1: 0, y1: 9, x2: 5, y2: 9],
+               [x1: 8, y1: 0, x2: 0, y2: 8],
+               [x1: 9, y1: 4, x2: 3, y2: 4]
+             ] =
                ["0,9 -> 5,9", "8,0 -> 0,8", " 9,4 -> 3,4"]
                |> Day.format_to_line_segments()
                |> Day.keep_horizontal_and_vertical_and_45_degrees_lines()
     end
 
     test "generate all wind points " do
-      #An entry like 1,1 -> 1,3 covers points 1,1, 1,2, and 1,3.
-      #An entry like 9,7 -> 7,7 covers points 9,7, 8,7, and 7,7.
-      assert  [[{6,4}, {5,3}, {4,2}, {3,1}, {2,0}]]  ==
-              [  [x1: 6, y1: 4, x2: 2, y2: 0]]
+      # An entry like 1,1 -> 1,3 covers points 1,1, 1,2, and 1,3.
+      # An entry like 9,7 -> 7,7 covers points 9,7, 8,7, and 7,7.
+      assert [[{6, 4}, {5, 3}, {4, 2}, {3, 1}, {2, 0}]] ==
+               [[x1: 6, y1: 4, x2: 2, y2: 0]]
                |> Day.keep_horizontal_and_vertical_and_45_degrees_lines()
                |> Day.generate_all_wind_points()
     end
   end
-
 end

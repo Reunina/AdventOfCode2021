@@ -20,9 +20,20 @@ defmodule FileReaderTest do
                """
                |> write_in_test_file()
                |> FileReader.read_file()
+               |> Enum.to_list()
     end
 
     test "read simply input as integers" do
+      assert [1, 2, 3] =
+               """
+               1
+               2
+               3
+               """
+               |> write_in_test_file()
+               |> FileReader.read_file(:as_int)
+               |> Enum.to_list()
+
       assert_raise ArgumentError,
                    "errors were found at the given arguments:\n\n  * 1st argument: not a textual representation of an integer\n",
                    fn ->
@@ -35,41 +46,11 @@ defmodule FileReaderTest do
                      """
                      |> write_in_test_file()
                      |> FileReader.read_file(:as_int)
+                     |> Enum.to_list()
                    end
-
-      assert [1, 2, 3] =
-               """
-               1
-               2
-               3
-               """
-               |> write_in_test_file()
-               |> FileReader.read_file(:as_int)
     end
 
     test "read simply input as a string and a int" do
-      ["string not_int", "3 not_int", "string 23.3"]
-      |> Enum.each(fn wrong_input_on_integer ->
-        assert_raise ArgumentError,
-                     "errors were found at the given arguments:\n\n  * 1st argument: not a textual representation of an integer\n",
-                     fn ->
-                       wrong_input_on_integer
-                       |> write_in_test_file()
-                       |> FileReader.read_file(:as_string_and_int)
-                     end
-      end)
-
-      ["string with spaces 2"]
-      |> Enum.each(fn wrong_input_on_string ->
-        assert_raise FunctionClauseError,
-                     "no function clause matching in anonymous fn/1 in FileReader.read_file/2",
-                     fn ->
-                       wrong_input_on_string
-                       |> write_in_test_file()
-                       |> FileReader.read_file(:as_string_and_int)
-                     end
-      end)
-
       assert [
                ["1", 1],
                ["another_string", 12]
@@ -80,6 +61,31 @@ defmodule FileReaderTest do
                """
                |> write_in_test_file()
                |> FileReader.read_file(:as_string_and_int)
+               |> Enum.to_list()
+
+      ["string not_int", "3 not_int", "string 23.3"]
+      |> Enum.each(fn wrong_input_on_integer ->
+        assert_raise ArgumentError,
+                     "errors were found at the given arguments:\n\n  * 1st argument: not a textual representation of an integer\n",
+                     fn ->
+                       wrong_input_on_integer
+                       |> write_in_test_file()
+                       |> FileReader.read_file(:as_string_and_int)
+                       |> Enum.to_list()
+                     end
+      end)
+
+      ["string with spaces 2"]
+      |> Enum.each(fn wrong_input_on_string ->
+        assert_raise ArgumentError,
+                     "errors were found at the given arguments:\n\n  * 1st argument: not a textual representation of an integer\n",
+                     fn ->
+                       wrong_input_on_string
+                       |> write_in_test_file()
+                       |> FileReader.read_file(:as_string_and_int)
+                       |> Enum.to_list()
+                     end
+      end)
     end
 
     defp write_in_test_file(content) do

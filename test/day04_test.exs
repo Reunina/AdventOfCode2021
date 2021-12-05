@@ -36,7 +36,9 @@ defmodule Day04Test do
              |> Day.part_02()
   end
 
-  defp extract_parameters([head | tail]) do
+  defp extract_parameters(stream) do
+    [head | tail] = stream |> Enum.to_list()
+
     %{
       numbers: extract_numbers(head),
       boards: extracts_boards(tail)

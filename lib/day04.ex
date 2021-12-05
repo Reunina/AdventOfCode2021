@@ -139,7 +139,6 @@ defmodule Day04 do
         %{boards: boards, numbers: [number | numbers]},
         {last_number, last_winner} \\ {0, []}
       ) do
-
     marked_boards = number |> mark_boards(boards)
     bingo? = marked_boards |> bingo?
 
