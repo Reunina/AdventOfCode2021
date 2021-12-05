@@ -44,6 +44,6 @@ defmodule FileReader do
   """
   def read_file(file_name) do
     File.stream!(file_name)
-    |> Enum.map(fn line -> String.trim(line) end)
+    |> Enum.map(&String.trim/1)
   end
 end
