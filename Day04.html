@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="advent_of_code_2021 v0.1.0">
 
-    <title>FileReader — advent_of_code_2021 v0.1.0</title>
+    <title>Day04 — advent_of_code_2021 v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
 
     <script src="dist/sidebar_items-186940b0b2.js"></script>
@@ -82,7 +82,7 @@ advent_of_code_2021
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">FileReader</span> 
+  <span translate="no">Day04</span> 
   <small class="app-vsn" translate="no">(advent_of_code_2021 v0.1.0)</small>
 
 
@@ -90,7 +90,7 @@ advent_of_code_2021
 
 
   <section id="moduledoc">
-<p>File reader for AOC inputs</p>
+<p>module doc TBD</p>
   </section>
 
 
@@ -110,22 +110,21 @@ advent_of_code_2021
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#read_file/1" translate="no">read_file(file_name)</a>
+          <a href="#part_01/1" translate="no">part_01(map)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>read input file as trimmed <code class="inline">string</code></p></div>
+          <div class="summary-synopsis"><p>part_01 doc TBD</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#read_file/2" translate="no">read_file(file_name, output_format)</a>
+          <a href="#part_02/2" translate="no">part_02(map, arg \\ {0, []})</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>read input file and format it as <code class="inline">output_format</code> indicates
-Returns list.</p></div>
+          <div class="summary-synopsis"><p>part_02 doc TBD</p></div>
 
       </div>
 
@@ -143,55 +142,40 @@ Returns list.</p></div>
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="read_file/1">
+<section class="detail" id="part_01/1">
 
   <div class="detail-header">
-    <a href="#read_file/1" class="detail-link" title="Link to this function">
+    <a href="#part_01/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">read_file(file_name)</h1>
+    <h1 class="signature" translate="no">part_01(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>read input file as trimmed <code class="inline">string</code></p><p>Returns list.</p>
+<p>part_01 doc TBD</p>
   </section>
 </section>
-<section class="detail" id="read_file/2">
+<section class="detail" id="part_02/2">
+
+    <span id="part_02/1"></span>
 
   <div class="detail-header">
-    <a href="#read_file/2" class="detail-link" title="Link to this function">
+    <a href="#part_02/2" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">read_file(file_name, output_format)</h1>
+    <h1 class="signature" translate="no">part_02(map, arg \\ {0, []})</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>read input file and format it as <code class="inline">output_format</code> indicates
-Returns list.</p><h2 id="read_file/2-example" class="section-heading">
-  <a href="#read_file/2-example" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Example
-</h2>
-<pre><code class="makeup elixir"><span class="w">    </span><span class="c1">#=&gt; in input_file :</span><span class="w">
-    </span><span class="c1"># a 12</span><span class="w">
-    </span><span class="c1"># z 9</span><span class="w">
-    </span><span class="c1"># u -5</span><span class="w">
-    </span><span class="nc">FileReader</span><span class="o">.</span><span class="n">read_file</span><span class="p" data-group-id="6567766928-1">(</span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="ss">:as_string_and_int</span><span class="p" data-group-id="6567766928-1">)</span><span class="w">
-    </span><span class="p" data-group-id="6567766928-2">[</span><span class="w"> </span><span class="p" data-group-id="6567766928-3">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="6567766928-3">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6567766928-4">[</span><span class="s">&quot;z&quot;</span><span class="p">,</span><span class="w">  </span><span class="mi">9</span><span class="p" data-group-id="6567766928-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6567766928-5">[</span><span class="s">&quot;u&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="p" data-group-id="6567766928-5">]</span><span class="w"> </span><span class="p" data-group-id="6567766928-2">]</span><span class="w">
-
-    </span><span class="c1">#=&gt; in input_file :</span><span class="w">
-    </span><span class="c1"># 12</span><span class="w">
-    </span><span class="c1"># 9</span><span class="w">
-    </span><span class="c1"># -5</span><span class="w">
-    </span><span class="nc">FileReader</span><span class="o">.</span><span class="n">read_file</span><span class="p" data-group-id="6567766928-6">(</span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="ss">:as_int</span><span class="p" data-group-id="6567766928-6">)</span><span class="w">
-    </span><span class="p" data-group-id="6567766928-7">[</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="p" data-group-id="6567766928-7">]</span></code></pre>
+<p>part_02 doc TBD</p>
   </section>
 </section>
 
