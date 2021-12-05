@@ -48,45 +48,38 @@ defmodule FileReaderTest do
     end
 
     test "read simply input as a string and a int" do
-      assert_raise ArgumentError,
-                   "errors were found at the given arguments:\n\n  * 2nd argument: not a tuple\n",
-                   fn ->
-                     """
-                     string not_int
-                     """
-                     |> write_in_test_file()
-                     |> FileReader.read_file(:as_string_and_int)
-                   end
-      assert_raise ArgumentError,
-                   "errors were found at the given arguments:\n\n  * 2nd argument: not a tuple\n",
-                   fn ->
-                     """
-                     3 not_int
-                     """
-                     |> write_in_test_file()
-                     |> FileReader.read_file(:as_string_and_int)
-                   end
-      assert_raise FunctionClauseError,
-                   "no function clause matching in anonymous fn/1 in FileReader.read_file/2",
-                   fn ->
-                     """
-                     string with spaces 2
-                     """
-                     |> write_in_test_file()
-                     |> FileReader.read_file(:as_string_and_int)
-                   end
+      ["string not_int", "3 not_int", "string 23.3"]
+      |> Enum.each(fn wrong_input_on_integer ->
+        assert_raise ArgumentError,
+                     "errors were found at the given arguments:\n\n  * 1st argument: not a textual representation of an integer\n",
+                     fn ->
+                       wrong_input_on_integer
+                       |> write_in_test_file()
+                       |> FileReader.read_file(:as_string_and_int)
+                     end
+      end)
+
+      ["string with spaces 2"]
+      |> Enum.each(fn wrong_input_on_string ->
+        assert_raise FunctionClauseError,
+                     "no function clause matching in anonymous fn/1 in FileReader.read_file/2",
+                     fn ->
+                       wrong_input_on_string
+                       |> write_in_test_file()
+                       |> FileReader.read_file(:as_string_and_int)
+                     end
+      end)
 
       assert [
                ["1", 1],
-               ["another_string", 12],
-               ["string", 23]
-             ] ="""
-                        1 1
-                        another_string 12
-                        string 23.3
-                        """
-                        |> write_in_test_file()
-                        |> FileReader.read_file(:as_string_and_int)
+               ["another_string", 12]
+             ] =
+               """
+               1 1
+               another_string 12
+               """
+               |> write_in_test_file()
+               |> FileReader.read_file(:as_string_and_int)
     end
 
     defp write_in_test_file(content) do
