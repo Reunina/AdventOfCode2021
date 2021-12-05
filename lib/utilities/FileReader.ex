@@ -35,7 +35,6 @@ defmodule FileReader do
       |> String.split("", trim: true)
       |> Enum.map(fn x -> String.to_integer(x) end)
     end)
-
   end
 
   def read_file(file_name, :as_string_and_int) do
