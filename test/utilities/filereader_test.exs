@@ -1,5 +1,5 @@
 defmodule FileReaderTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FileReader
 
   @test_file ".temp.FileReaderTest.txt"

@@ -1,5 +1,5 @@
 defmodule Day03Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FileReader
   doctest Day03
 
@@ -24,13 +24,13 @@ defmodule Day03Test do
     assert 230 =
              @test_input
              |> FileReader.read_file(:as_ints_list)
-             |>Enum.to_list()
+             |> Enum.to_list()
              |> Day.part_02()
 
     assert 2_981_085 =
              @real_input
              |> FileReader.read_file(:as_ints_list)
-             |>Enum.to_list()
+             |> Enum.to_list()
              |> Day.part_02()
   end
 end

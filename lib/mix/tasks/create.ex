@@ -77,7 +77,7 @@ defmodule Mix.Tasks.Create do
     "test/day#{day}_test.exs"
     |> write_file("""
     defmodule Day#{day}Test do
-      use ExUnit.Case
+       use ExUnit.Case, async: true
       alias FileReader
       doctest Day#{day}
 
