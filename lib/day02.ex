@@ -41,8 +41,8 @@ defmodule Day02 do
   """
   def part_01(input, initial_position \\ {0, 0}) do
     input
-      |> process_moves(initial_position)
-      |> get_product_x_by_y()
+    |> process_moves(initial_position)
+    |> get_product_x_by_y()
   end
 
   @doc """

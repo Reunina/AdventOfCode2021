@@ -28,25 +28,17 @@ defmodule FileReader do
 
   def read_file(file_name, :as_ints_list) do
     file_name
-    |> File.stream!()
-    |> Enum.map(fn line ->
-      line
-      |> String.replace("\n", "")
-      |> String.split("", trim: true)
-      |> Enum.map(fn x -> String.to_integer(x) end)
-    end)
+    |> read_with_function(&to_list_of_integers(&1))
   end
 
   def read_file(file_name, :as_string_and_int) do
-    File.stream!(file_name)
-    |> Enum.map(fn line -> String.split(line) end)
-    |> Enum.map(fn [a, b] -> [a, b |> String.trim() |> String.to_integer()] end)
+    file_name
+    |> read_with_function(&to_string_and_int(&1))
   end
 
   def read_file(file_name, :as_int) do
     file_name
-    |> File.stream!()
-    |> Enum.map(fn line -> line |> String.trim() |> String.to_integer() end)
+    |> read_with_function(&to_int(&1))
   end
 
   @doc """
@@ -56,7 +48,28 @@ defmodule FileReader do
   """
   def read_file(file_name) do
     file_name
-    |> File.stream!()
-    |> Enum.map(&String.trim/1)
+    |> read_with_function(&String.trim(&1))
   end
+
+  defp read_with_function(filename, function) do
+    filename
+    |> File.stream!()
+    |> Stream.map(&function.(&1))
+  end
+
+  defp to_string_and_int(line),
+    do:
+      line
+      |> String.replace("\n", "")
+      |> String.split(" ")
+      |> update_in([Access.at(1)], fn b -> to_int(b) end)
+
+  defp to_int(line), do: line |> String.trim() |> String.to_integer()
+
+  defp to_list_of_integers(line),
+    do:
+      line
+      |> String.replace("\n", "")
+      |> String.split("", trim: true)
+      |> Enum.map(&String.to_integer/1)
 end

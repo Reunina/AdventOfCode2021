@@ -48,16 +48,20 @@ defmodule Day05 do
   """
   def part_01(input) do
     input
-  |> format_to_line_segments()
-  |> keep_horizontal_and_vertical_lines()
-  |> generate_all_wind_points()
+    |> format_to_line_segments()
+    |> keep_horizontal_and_vertical_lines()
+    |> generate_all_wind_points()
     |> count_overlaps()
-
   end
-defp count_overlaps(points)do
+
+  defp count_overlaps(points) do
     points
-|> List.flatten() |> Enum.frequencies() |> Enum.filter(fn {_, duplicates} -> duplicates > 1 end)  |> Enum.count()
-end
+    |> List.flatten()
+    |> Enum.frequencies()
+    |> Enum.filter(fn {_, duplicates} -> duplicates > 1 end)
+    |> Enum.count()
+  end
+
   @doc """
   Unfortunately, considering only horizontal and vertical lines doesn't give you the full picture; you need to also consider diagonal lines.
 
@@ -98,7 +102,7 @@ end
   def format_to_line_segments(coordinates) do
     [:x1, :y1, :x2, :y2]
     |> Enum.zip(
-         coordinates
+      coordinates
       |> String.split([",", " -> ", " "], trim: true)
       |> Enum.map(&String.to_integer/1)
     )
@@ -112,33 +116,32 @@ end
   def keep_horizontal_and_vertical_and_45_degrees_lines(line_segments) do
     line_segments
     |> Enum.filter(fn [x1: x1, y1: y1, x2: x2, y2: y2] ->
-      x1 == x2 or y1 == y2 or  (abs(y2-y1) ==abs( x1-x2))
+      x1 == x2 or y1 == y2 or abs(y2 - y1) == abs(x1 - x2)
     end)
   end
 
-  def generate_all_wind_points([x1: x1, y1: y1, x2: x2, y2: y2]) when x1 == x2 do
+  def generate_all_wind_points(x1: x1, y1: y1, x2: x2, y2: y2) when x1 == x2 do
     y1..y2
     |> Enum.map(fn y -> {x1, y} end)
   end
 
-  def generate_all_wind_points([x1: x1, y1: y1, x2: x2, y2: y2])  when y1 == y2 do
+  def generate_all_wind_points(x1: x1, y1: y1, x2: x2, y2: y2) when y1 == y2 do
     x1..x2
     |> Enum.map(fn x -> {x, y1} end)
   end
 
-  def generate_all_wind_points([x1: x1, y1: y1, x2: x2, y2: _])  when y1 == x2 do
+  def generate_all_wind_points(x1: x1, y1: y1, x2: x2, y2: _) when y1 == x2 do
     x1..y1
     |> Enum.zip(x1..y1 |> Enum.reverse())
   end
-  def generate_all_wind_points([x1: x1, y1: y1, x2: x2, y2: y2]) do
+
+  def generate_all_wind_points(x1: x1, y1: y1, x2: x2, y2: y2) do
     x1..x2
-    |> Enum.zip(y1..y2 )
+    |> Enum.zip(y1..y2)
   end
 
-
-  def generate_all_wind_points(line_segments)  when is_list(line_segments) do
+  def generate_all_wind_points(line_segments) when is_list(line_segments) do
     line_segments
     |> Enum.map(&generate_all_wind_points/1)
   end
-
 end
