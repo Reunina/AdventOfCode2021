@@ -24,19 +24,19 @@ defmodule FileReader do
       [ 12, 9, -5 ]
   ```
   """
-  def read_file(file_name, output_format)
+  def read_file(file_name, output_format, opts \\ [separator: ""])
 
-  def read_file(file_name, :as_ints_list) do
+  def read_file(file_name, :as_ints_list, opts) do
     file_name
-    |> read_with_function(&to_list_of_integers(&1))
+    |> read_with_function(&to_list_of_integers(&1, opts[:separator]))
   end
 
-  def read_file(file_name, :as_string_and_int) do
+  def read_file(file_name, :as_string_and_int, _opts) do
     file_name
     |> read_with_function(&to_string_and_int(&1))
   end
 
-  def read_file(file_name, :as_int) do
+  def read_file(file_name, :as_int, _opts) do
     file_name
     |> read_with_function(&to_int(&1))
   end
@@ -66,10 +66,10 @@ defmodule FileReader do
 
   defp to_int(line), do: line |> String.trim() |> String.to_integer()
 
-  defp to_list_of_integers(line),
+  defp to_list_of_integers(line, separator),
     do:
       line
       |> String.replace("\n", "")
-      |> String.split("", trim: true)
+      |> String.split(separator, trim: true)
       |> Enum.map(&String.to_integer/1)
 end
