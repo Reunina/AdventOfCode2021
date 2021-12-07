@@ -12,11 +12,15 @@ defmodule Day07Test do
     assert 37 =
              @test_input
              |> FileReader.read_file(:as_ints_list, separator: ",")
+             |> Enum.to_list()
+             |> List.flatten()
              |> Day.part_01()
 
     assert 325_528 =
              @real_input
              |> FileReader.read_file(:as_ints_list, separator: ",")
+             |> Enum.to_list()
+             |> List.flatten()
              |> Day.part_01()
   end
 
@@ -24,11 +28,15 @@ defmodule Day07Test do
     assert 168 =
              @test_input
              |> FileReader.read_file(:as_ints_list, separator: ",")
+             |> Enum.to_list()
+             |> List.flatten()
              |> Day.part_02()
 
     assert 85_015_836 =
              @real_input
              |> FileReader.read_file(:as_ints_list, separator: ",")
+             |> Enum.to_list()
+             |> List.flatten()
              |> Day.part_02()
   end
 end

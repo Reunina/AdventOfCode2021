@@ -42,7 +42,6 @@ defmodule Day07 do
     do:
       crabs
       |> group_by_position()
-      |> sort_by_group_size()
       |> compute_all_moves_possibilities(cost_computation)
       |> choose_cheapest()
 
@@ -94,37 +93,23 @@ defmodule Day07 do
   defp choose_cheapest(moves_and_costs) do
     moves_and_costs
     |> Enum.min()
-    |> elem(0)
   end
 
-  defp compute_all_moves_possibilities(crabs, cost_of_moving) do
+  defp compute_all_moves_possibilities(crabs, cost_computation) do
     {{min_position, _}, {max_position, _}} = crabs |> Enum.min_max()
 
     min_position..max_position
-    |> Enum.map(fn position_to_reach ->
-      {
-        compute_moves_possibilities(crabs, position_to_reach, cost_of_moving),
-        position_to_reach
-      }
-    end)
+    |> Enum.map(&compute_moves_possibilities(crabs, &1, cost_computation))
   end
 
-  defp compute_moves_possibilities(crabs, position_to_reach, cost_of_moving) do
+  defp compute_moves_possibilities(crabs, position_to_reach, cost_computation) do
     crabs
-    |> Enum.map(&cost_of_moving.(&1, position_to_reach))
+    |> Enum.map(&cost_computation.(&1, position_to_reach))
     |> Enum.sum()
   end
-
-  defp sort_by_group_size(crabs),
-    do:
-      crabs
-      |> Enum.sort_by(&elem(&1, 1))
-      |> Enum.reverse()
 
   defp group_by_position(crabs),
     do:
       crabs
-      |> Enum.to_list()
-      |> List.flatten()
       |> Enum.frequencies()
 end
