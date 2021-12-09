@@ -51,7 +51,7 @@ defmodule FileReader do
     |> read_with_function(&String.trim(&1))
   end
 
-  defp read_with_function(filename, function) do
+  def read_with_function(filename, function) do
     filename
     |> File.stream!()
     |> Stream.map(&function.(&1))
