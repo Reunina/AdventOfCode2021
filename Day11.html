@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="advent_of_code_2021 v0.1.0">
+
+    <title>Day11 — advent_of_code_2021 v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
+
+    <script src="dist/sidebar_items-a97214795f.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a404e1e870b77c874f9e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+advent_of_code_2021
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </strong>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+      <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Day11</span> 
+  <small class="app-vsn" translate="no">(advent_of_code_2021 v0.1.0)</small>
+
+
+</h1>
+
+
+  <section id="moduledoc">
+<h1>--- Dumbo Octopus ---</h1><p>You enter a large cavern full of rare bioluminescent dumbo octopuses! They seem to not like the Christmas lights on your submarine, so you turn them off for now.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#displ/1" translate="no">displ(v)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#part_01/2" translate="no">part_01(input, steps \\ 100)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>There are 100 octopuses arranged neatly in a 10 by 10 grid. Each octopus slowly gains energy over time and flashes brightly for a moment when its energy is full. Although your lights are off, maybe you could navigate through the cave without disturbing the octopuses if you could predict when the flashes of light will happen.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#part_02/2" translate="no">part_02(input, steps \\ 200)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>It seems like the individual flashes aren't bright enough to navigate. However, you might have a better option: the flashes seem to be synchronizing!
+In the example above, the first time all octopuses flash simultaneously is step 195</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="displ/1">
+
+  <div class="detail-header">
+    <a href="#displ/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">displ(v)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="part_01/2">
+
+    <span id="part_01/1"></span>
+
+  <div class="detail-header">
+    <a href="#part_01/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">part_01(input, steps \\ 100)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>There are 100 octopuses arranged neatly in a 10 by 10 grid. Each octopus slowly gains energy over time and flashes brightly for a moment when its energy is full. Although your lights are off, maybe you could navigate through the cave without disturbing the octopuses if you could predict when the flashes of light will happen.</p><p>Each octopus has an energy level - your submarine can remotely measure the energy level of each octopus (your puzzle input). For example:</p><pre><code class="makeup elixir"><span class="mi">5483143223</span><span class="w">
+</span><span class="mi">2745854711</span><span class="w">
+</span><span class="mi">5264556173</span><span class="w">
+</span><span class="mi">6141336146</span><span class="w">
+</span><span class="mi">6357385478</span><span class="w">
+</span><span class="mi">4167524645</span><span class="w">
+</span><span class="mi">2176841721</span><span class="w">
+</span><span class="mi">6882881134</span><span class="w">
+</span><span class="mi">4846848554</span><span class="w">
+</span><span class="mi">5283751526</span></code></pre><p>The energy level of each octopus is a value between 0 and 9. Here, the top-left octopus has an energy level of 5, the bottom-right one has an energy level of 6, and so on.</p><p>You can model the energy levels and flashes of light in steps. During a single step, the following occurs:</p><p>First, the energy level of each octopus increases by 1.
+Then, any octopus with an energy level greater than 9 flashes. This increases the energy level of all adjacent octopuses by 1, including octopuses that are diagonally adjacent. If this causes an octopus to have an energy level greater than 9, it also flashes. This process continues as long as new octopuses keep having their energy level increased beyond 9. (An octopus can only flash at most once per step.)
+Finally, any octopus that flashed during this step has its energy level set to 0, as it used all of its energy to flash.
+Adjacent flashes can cause an octopus to flash on a step even if it begins that step with very little energy. Consider the middle octopus with 1 energy in this situation:</p><p>Before any steps:</p><pre><code class="makeup elixir"><span class="mi">11111</span><span class="w">
+</span><span class="mi">19991</span><span class="w">
+</span><span class="mi">19191</span><span class="w">
+</span><span class="mi">19991</span><span class="w">
+</span><span class="mi">11111</span></code></pre><p>After step 1:</p><pre><code class="makeup elixir"><span class="mi">34543</span><span class="w">
+</span><span class="mi">40004</span><span class="w">
+</span><span class="mi">50005</span><span class="w">
+</span><span class="mi">40004</span><span class="w">
+</span><span class="mi">34543</span></code></pre><p>After step 2:</p><pre><code class="makeup elixir"><span class="mi">45654</span><span class="w">
+</span><span class="mi">51115</span><span class="w">
+</span><span class="mi">61116</span><span class="w">
+</span><span class="mi">51115</span><span class="w">
+</span><span class="mi">45654</span></code></pre><p>An octopus is highlighted when it flashed during the given step.</p><p>Here is how the larger example above progresses:</p><p>Before any steps:</p><pre><code class="makeup elixir"><span class="mi">5483143223</span><span class="w">
+</span><span class="mi">2745854711</span><span class="w">
+</span><span class="mi">5264556173</span><span class="w">
+</span><span class="mi">6141336146</span><span class="w">
+</span><span class="mi">6357385478</span><span class="w">
+</span><span class="mi">4167524645</span><span class="w">
+</span><span class="mi">2176841721</span><span class="w">
+</span><span class="mi">6882881134</span><span class="w">
+</span><span class="mi">4846848554</span><span class="w">
+</span><span class="mi">5283751526</span></code></pre><p>After step 1:</p><pre><code class="makeup elixir"><span class="mi">6594254334</span><span class="w">
+</span><span class="mi">3856965822</span><span class="w">
+</span><span class="mi">6375667284</span><span class="w">
+</span><span class="mi">7252447257</span><span class="w">
+</span><span class="mi">7468496589</span><span class="w">
+</span><span class="mi">5278635756</span><span class="w">
+</span><span class="mi">3287952832</span><span class="w">
+</span><span class="mi">7993992245</span><span class="w">
+</span><span class="mi">5957959665</span><span class="w">
+</span><span class="mi">6394862637</span></code></pre><p>After step 2:</p><pre><code class="makeup elixir"><span class="mi">8807476555</span><span class="w">
+</span><span class="mi">5089087054</span><span class="w">
+</span><span class="mi">8597889608</span><span class="w">
+</span><span class="mi">8485769600</span><span class="w">
+</span><span class="mi">8700908800</span><span class="w">
+</span><span class="mi">6600088989</span><span class="w">
+</span><span class="mi">6800005943</span><span class="w">
+</span><span class="mi">0000007456</span><span class="w">
+</span><span class="mi">9000000876</span><span class="w">
+</span><span class="mi">8700006848</span></code></pre><p>After step 3:</p><pre><code class="makeup elixir"><span class="mi">0050900866</span><span class="w">
+</span><span class="mi">8500800575</span><span class="w">
+</span><span class="mi">9900000039</span><span class="w">
+</span><span class="mi">9700000041</span><span class="w">
+</span><span class="mi">9935080063</span><span class="w">
+</span><span class="mi">7712300000</span><span class="w">
+</span><span class="mi">7911250009</span><span class="w">
+</span><span class="mi">2211130000</span><span class="w">
+</span><span class="mi">0421125000</span><span class="w">
+</span><span class="mi">0021119000</span></code></pre><p>After step 4:</p><pre><code class="makeup elixir"><span class="mi">2263031977</span><span class="w">
+</span><span class="mi">0923031697</span><span class="w">
+</span><span class="mi">0032221150</span><span class="w">
+</span><span class="mi">0041111163</span><span class="w">
+</span><span class="mi">0076191174</span><span class="w">
+</span><span class="mi">0053411122</span><span class="w">
+</span><span class="mi">0042361120</span><span class="w">
+</span><span class="mi">5532241122</span><span class="w">
+</span><span class="mi">1532247211</span><span class="w">
+</span><span class="mi">1132230211</span></code></pre><p>After step 5:</p><pre><code class="makeup elixir"><span class="mi">4484144000</span><span class="w">
+</span><span class="mi">2044144000</span><span class="w">
+</span><span class="mi">2253333493</span><span class="w">
+</span><span class="mi">1152333274</span><span class="w">
+</span><span class="mi">1187303285</span><span class="w">
+</span><span class="mi">1164633233</span><span class="w">
+</span><span class="mi">1153472231</span><span class="w">
+</span><span class="mi">6643352233</span><span class="w">
+</span><span class="mi">2643358322</span><span class="w">
+</span><span class="mi">2243341322</span></code></pre><p>After step 6:</p><pre><code class="makeup elixir"><span class="mi">5595255111</span><span class="w">
+</span><span class="mi">3155255222</span><span class="w">
+</span><span class="mi">3364444605</span><span class="w">
+</span><span class="mi">2263444496</span><span class="w">
+</span><span class="mi">2298414396</span><span class="w">
+</span><span class="mi">2275744344</span><span class="w">
+</span><span class="mi">2264583342</span><span class="w">
+</span><span class="mi">7754463344</span><span class="w">
+</span><span class="mi">3754469433</span><span class="w">
+</span><span class="mi">3354452433</span></code></pre><p>After step 7:</p><pre><code class="makeup elixir"><span class="mi">6707366222</span><span class="w">
+</span><span class="mi">4377366333</span><span class="w">
+</span><span class="mi">4475555827</span><span class="w">
+</span><span class="mi">3496655709</span><span class="w">
+</span><span class="mi">3500625609</span><span class="w">
+</span><span class="mi">3509955566</span><span class="w">
+</span><span class="mi">3486694453</span><span class="w">
+</span><span class="mi">8865585555</span><span class="w">
+</span><span class="mi">4865580644</span><span class="w">
+</span><span class="mi">4465574644</span></code></pre><p>After step 8:</p><pre><code class="makeup elixir"><span class="mi">7818477333</span><span class="w">
+</span><span class="mi">5488477444</span><span class="w">
+</span><span class="mi">5697666949</span><span class="w">
+</span><span class="mi">4608766830</span><span class="w">
+</span><span class="mi">4734946730</span><span class="w">
+</span><span class="mi">4740097688</span><span class="w">
+</span><span class="mi">6900007564</span><span class="w">
+</span><span class="mi">0000009666</span><span class="w">
+</span><span class="mi">8000004755</span><span class="w">
+</span><span class="mi">6800007755</span></code></pre><p>After step 9:</p><pre><code class="makeup elixir"><span class="mi">9060000644</span><span class="w">
+</span><span class="mi">7800000976</span><span class="w">
+</span><span class="mi">6900000080</span><span class="w">
+</span><span class="mi">5840000082</span><span class="w">
+</span><span class="mi">5858000093</span><span class="w">
+</span><span class="mi">6962400000</span><span class="w">
+</span><span class="mi">8021250009</span><span class="w">
+</span><span class="mi">2221130009</span><span class="w">
+</span><span class="mi">9111128097</span><span class="w">
+</span><span class="mi">7911119976</span></code></pre><p>After step 10:</p><pre><code class="makeup elixir"><span class="mi">0481112976</span><span class="w">
+</span><span class="mi">0031112009</span><span class="w">
+</span><span class="mi">0041112504</span><span class="w">
+</span><span class="mi">0081111406</span><span class="w">
+</span><span class="mi">0099111306</span><span class="w">
+</span><span class="mi">0093511233</span><span class="w">
+</span><span class="mi">0442361130</span><span class="w">
+</span><span class="mi">5532252350</span><span class="w">
+</span><span class="mi">0532250600</span><span class="w">
+</span><span class="mi">0032240000</span></code></pre><p>After step 10, there have been a total of 204 flashes. Fast forwarding, here is the same configuration every 10 steps:</p><p>After step 20:</p><pre><code class="makeup elixir"><span class="mi">3936556452</span><span class="w">
+</span><span class="mi">5686556806</span><span class="w">
+</span><span class="mi">4496555690</span><span class="w">
+</span><span class="mi">4448655580</span><span class="w">
+</span><span class="mi">4456865570</span><span class="w">
+</span><span class="mi">5680086577</span><span class="w">
+</span><span class="mi">7000009896</span><span class="w">
+</span><span class="mi">0000000344</span><span class="w">
+</span><span class="mi">6000000364</span><span class="w">
+</span><span class="mi">4600009543</span></code></pre><p>After step 30:</p><pre><code class="makeup elixir"><span class="mi">0643334118</span><span class="w">
+</span><span class="mi">4253334611</span><span class="w">
+</span><span class="mi">3374333458</span><span class="w">
+</span><span class="mi">2225333337</span><span class="w">
+</span><span class="mi">2229333338</span><span class="w">
+</span><span class="mi">2276733333</span><span class="w">
+</span><span class="mi">2754574565</span><span class="w">
+</span><span class="mi">5544458511</span><span class="w">
+</span><span class="mi">9444447111</span><span class="w">
+</span><span class="mi">7944446119</span></code></pre><p>After step 40:</p><pre><code class="makeup elixir"><span class="mi">6211111981</span><span class="w">
+</span><span class="mi">0421111119</span><span class="w">
+</span><span class="mi">0042111115</span><span class="w">
+</span><span class="mi">0003111115</span><span class="w">
+</span><span class="mi">0003111116</span><span class="w">
+</span><span class="mi">0065611111</span><span class="w">
+</span><span class="mi">0532351111</span><span class="w">
+</span><span class="mi">3322234597</span><span class="w">
+</span><span class="mi">2222222976</span><span class="w">
+</span><span class="mi">2222222762</span></code></pre><p>After step 50:</p><pre><code class="makeup elixir"><span class="mi">9655556447</span><span class="w">
+</span><span class="mi">4865556805</span><span class="w">
+</span><span class="mi">4486555690</span><span class="w">
+</span><span class="mi">4458655580</span><span class="w">
+</span><span class="mi">4574865570</span><span class="w">
+</span><span class="mi">5700086566</span><span class="w">
+</span><span class="mi">6000009887</span><span class="w">
+</span><span class="mi">8000000533</span><span class="w">
+</span><span class="mi">6800000633</span><span class="w">
+</span><span class="mi">5680000538</span></code></pre><p>After step 60:</p><pre><code class="makeup elixir"><span class="mi">2533334200</span><span class="w">
+</span><span class="mi">2743334640</span><span class="w">
+</span><span class="mi">2264333458</span><span class="w">
+</span><span class="mi">2225333337</span><span class="w">
+</span><span class="mi">2225333338</span><span class="w">
+</span><span class="mi">2287833333</span><span class="w">
+</span><span class="mi">3854573455</span><span class="w">
+</span><span class="mi">1854458611</span><span class="w">
+</span><span class="mi">1175447111</span><span class="w">
+</span><span class="mi">1115446111</span></code></pre><p>After step 70:</p><pre><code class="makeup elixir"><span class="mi">8211111164</span><span class="w">
+</span><span class="mi">0421111166</span><span class="w">
+</span><span class="mi">0042111114</span><span class="w">
+</span><span class="mi">0004211115</span><span class="w">
+</span><span class="mi">0000211116</span><span class="w">
+</span><span class="mi">0065611111</span><span class="w">
+</span><span class="mi">0532351111</span><span class="w">
+</span><span class="mi">7322235117</span><span class="w">
+</span><span class="mi">5722223475</span><span class="w">
+</span><span class="mi">4572222754</span></code></pre><p>After step 80:</p><pre><code class="makeup elixir"><span class="mi">1755555697</span><span class="w">
+</span><span class="mi">5965555609</span><span class="w">
+</span><span class="mi">4486555680</span><span class="w">
+</span><span class="mi">4458655580</span><span class="w">
+</span><span class="mi">4570865570</span><span class="w">
+</span><span class="mi">5700086566</span><span class="w">
+</span><span class="mi">7000008666</span><span class="w">
+</span><span class="mi">0000000990</span><span class="w">
+</span><span class="mi">0000000800</span><span class="w">
+</span><span class="mi">0000000000</span></code></pre><p>After step 90:</p><pre><code class="makeup elixir"><span class="mi">7433333522</span><span class="w">
+</span><span class="mi">2643333522</span><span class="w">
+</span><span class="mi">2264333458</span><span class="w">
+</span><span class="mi">2226433337</span><span class="w">
+</span><span class="mi">2222433338</span><span class="w">
+</span><span class="mi">2287833333</span><span class="w">
+</span><span class="mi">2854573333</span><span class="w">
+</span><span class="mi">4854458333</span><span class="w">
+</span><span class="mi">3387779333</span><span class="w">
+</span><span class="mi">3333333333</span></code></pre><p>After step 100:</p><pre><code class="makeup elixir"><span class="mi">0397666866</span><span class="w">
+</span><span class="mi">0749766918</span><span class="w">
+</span><span class="mi">0053976933</span><span class="w">
+</span><span class="mi">0004297822</span><span class="w">
+</span><span class="mi">0004229892</span><span class="w">
+</span><span class="mi">0053222877</span><span class="w">
+</span><span class="mi">0532222966</span><span class="w">
+</span><span class="mi">9322228966</span><span class="w">
+</span><span class="mi">7922286866</span><span class="w">
+</span><span class="mi">6789998766</span></code></pre><p>After 100 steps, there have been a total of 1656 flashes.</p><p>Given the starting energy levels of the dumbo octopuses in your cavern, simulate 100 steps.</p><h2 id="part_01/2-how-many-total-flashes-are-there-after-100-steps" class="section-heading">
+  <a href="#part_01/2-how-many-total-flashes-are-there-after-100-steps" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  How many total flashes are there after 100 steps?
+</h2>
+
+  </section>
+</section>
+<section class="detail" id="part_02/2">
+
+    <span id="part_02/1"></span>
+
+  <div class="detail-header">
+    <a href="#part_02/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">part_02(input, steps \\ 200)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>It seems like the individual flashes aren't bright enough to navigate. However, you might have a better option: the flashes seem to be synchronizing!
+In the example above, the first time all octopuses flash simultaneously is step 195:</p><p>After step 193:</p><pre><code class="makeup elixir"><span class="mi">5877777777</span><span class="w">
+</span><span class="mi">8877777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span><span class="w">
+</span><span class="mi">7777777777</span></code></pre><p>After step 194:</p><pre><code class="makeup elixir"><span class="mi">6988888888</span><span class="w">
+</span><span class="mi">9988888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span><span class="w">
+</span><span class="mi">8888888888</span></code></pre><p>After step 195:</p><pre><code class="makeup elixir"><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span><span class="w">
+</span><span class="mi">0000000000</span></code></pre><p>If you can calculate the exact moments when the octopuses will all flash simultaneously, you should be able to navigate through the cavern.</p><h2 id="part_02/2-what-is-the-first-step-during-which-all-octopuses-flash" class="section-heading">
+  <a href="#part_02/2-what-is-the-first-step-during-which-all-octopuses-flash" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  What is the first step during which all octopuses flash?
+</h2>
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
