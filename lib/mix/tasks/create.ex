@@ -149,5 +149,11 @@ defmodule Mix.Tasks.Create do
   end
 
   defp headers,
-    do: [{'cookie', String.to_charlist("session=" <> System.get_env("AOC_KEY"))}]
+    do: [
+      {'cookie',
+       String.to_charlist(
+         "session=" <>
+           "53616c7465645f5fb330cdc518605f4c06630e717c4332e6ec0f22f0e37589caf3bd211d636e1d1d6714d90a8f83cb91"
+       )}
+    ]
 end
