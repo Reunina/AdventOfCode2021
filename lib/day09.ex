@@ -1,4 +1,3 @@
-
 defmodule Day09 do
   @moduledoc """
   # --- Smoke Basin ---
