@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="advent_of_code_2021 v0.1.0">
+
+    <title>Day09 — advent_of_code_2021 v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
+
+    <script src="dist/sidebar_items-1a8d935378.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a404e1e870b77c874f9e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+advent_of_code_2021
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </strong>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+      <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Day09</span> 
+  <small class="app-vsn" translate="no">(advent_of_code_2021 v0.1.0)</small>
+
+
+</h1>
+
+
+  <section id="moduledoc">
+<h1>--- Smoke Basin ---</h1><p>These caves seem to be lava tubes. Parts are even still volcanically active; small hydrothermal vents release smoke into the caves that slowly settles like rain.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#part_01/1" translate="no">part_01(input)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>If you can model how the smoke flows through the caves, you might be able to avoid it and be that much safer. The submarine generates a heightmap of the floor of the nearby caves for you (your puzzle input).</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#part_02/1" translate="no">part_02(input)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Next, you need to find the largest basins so you know what areas are most important to avoid.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="part_01/1">
+
+  <div class="detail-header">
+    <a href="#part_01/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">part_01(input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>If you can model how the smoke flows through the caves, you might be able to avoid it and be that much safer. The submarine generates a heightmap of the floor of the nearby caves for you (your puzzle input).</p><p>Smoke flows to the lowest point of the area it's in. For example, consider the following heightmap:</p><pre><code class="makeup elixir"><span class="mi">2199943210</span><span class="w">
+</span><span class="mi">3987894921</span><span class="w">
+</span><span class="mi">9856789892</span><span class="w">
+</span><span class="mi">8767896789</span><span class="w">
+</span><span class="mi">9899965678</span></code></pre><p>Each number corresponds to the height of a particular location, where 9 is the highest and 0 is the lowest a location can be.</p><p>Your first goal is to find the low points - the locations that are lower than any of its adjacent locations. Most locations have four adjacent locations (up, down, left, and right); locations on the edge or corner of the map have three or two adjacent locations, respectively. (Diagonal locations do not count as adjacent.)</p><p>In the above example, there are four low points, all highlighted: two are in the first row (a 1 and a 0), one is in the third row (a 5), and one is in the bottom row (also a 5). All other locations on the heightmap have some lower adjacent location, and so are not low points.</p><p>The risk level of a low point is 1 plus its height. In the above example, the risk levels of the low points are 2, 1, 6, and 6. The sum of the risk levels of all low points in the heightmap is therefore 15.</p><p>Find all of the low points on your heightmap.</p><h2 id="part_01/1-what-is-the-sum-of-the-risk-levels-of-all-low-points-on-your-heightmap" class="section-heading">
+  <a href="#part_01/1-what-is-the-sum-of-the-risk-levels-of-all-low-points-on-your-heightmap" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  What is the sum of the risk levels of all low points on your heightmap?
+</h2>
+
+  </section>
+</section>
+<section class="detail" id="part_02/1">
+
+  <div class="detail-header">
+    <a href="#part_02/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">part_02(input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Next, you need to find the largest basins so you know what areas are most important to avoid.</p><p>A basin is all locations that eventually flow downward to a single low point. Therefore, every low point has a basin, although some basins are very small. Locations of height 9 do not count as being in any basin, and all other locations will always be part of exactly one basin.</p><p>The size of a basin is the number of locations within the basin, including the low point. The example above has four basins.</p><p>The top-left basin, size 3:</p><pre><code class="makeup elixir"><span class="mi">2199943210</span><span class="w">
+</span><span class="mi">3987894921</span><span class="w">
+</span><span class="mi">9856789892</span><span class="w">
+</span><span class="mi">8767896789</span><span class="w">
+</span><span class="mi">9899965678</span></code></pre><p>The top-right basin, size 9:</p><pre><code class="makeup elixir"><span class="mi">2199943210</span><span class="w">
+</span><span class="mi">3987894921</span><span class="w">
+</span><span class="mi">9856789892</span><span class="w">
+</span><span class="mi">8767896789</span><span class="w">
+</span><span class="mi">9899965678</span></code></pre><p>The middle basin, size 14:</p><pre><code class="makeup elixir"><span class="mi">2199943210</span><span class="w">
+</span><span class="mi">3987894921</span><span class="w">
+</span><span class="mi">9856789892</span><span class="w">
+</span><span class="mi">8767896789</span><span class="w">
+</span><span class="mi">9899965678</span></code></pre><p>The bottom-right basin, size 9:</p><pre><code class="makeup elixir"><span class="mi">2199943210</span><span class="w">
+</span><span class="mi">3987894921</span><span class="w">
+</span><span class="mi">9856789892</span><span class="w">
+</span><span class="mi">8767896789</span><span class="w">
+</span><span class="mi">9899965678</span></code></pre><p>Find the three largest basins and multiply their sizes together. In the above example, this is 9 <em> 14 </em> 9 = 1134.</p><h2 id="part_02/1-what-do-you-get-if-you-multiply-together-the-sizes-of-the-three-largest-basins" class="section-heading">
+  <a href="#part_02/1-what-do-you-get-if-you-multiply-together-the-sizes-of-the-three-largest-basins" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  What do you get if you multiply together the sizes of the three largest basins?
+</h2>
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
