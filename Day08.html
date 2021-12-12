@@ -10,7 +10,7 @@
     <title>Day08 — advent_of_code_2021 v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
 
-    <script src="dist/sidebar_items-ab0a6c9794.js"></script>
+    <script src="dist/sidebar_items-af3913af53.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -90,7 +90,7 @@ advent_of_code_2021
 
 
   <section id="moduledoc">
-<p>module doc TBD</p>
+<h1>--- Seven Segment Search ---</h1><p>You barely reach the safety of the cave when the whale smashes into the cave mouth, collapsing it. Sensors indicate another exit to this cave at a much greater depth, so you have no choice but to press on.</p>
   </section>
 
 
@@ -110,51 +110,11 @@ advent_of_code_2021
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#find_0_6_9_digits/1" translate="no">find_0_6_9_digits(list)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#find_2_3_5_digits/1" translate="no">find_2_3_5_digits(pp)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#find_easy_digits/1" translate="no">find_easy_digits(list)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#find_easy_digits_sec/1" translate="no">find_easy_digits_sec(pp)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#get_val_in/2" translate="no">get_val_in(ten_patterns, val)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
           <a href="#part_01/1" translate="no">part_01(input)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>part_01 doc TBD</p></div>
+          <div class="summary-synopsis"><p>As your submarine slowly makes its way through the cave system, you notice that the four-digit seven-segment displays in your submarine are malfunctioning; they must have been damaged during the escape. You'll be in a lot of trouble without them, so you'd better figure out what's wrong.</p></div>
 
       </div>
 
@@ -164,7 +124,7 @@ advent_of_code_2021
 
         </div>
 
-          <div class="summary-synopsis"><p>part_02 doc TBD</p></div>
+          <div class="summary-synopsis"><p>Through a little deduction, you should now be able to determine the remaining digits. Consider again the first example above</p></div>
 
       </div>
 
@@ -182,91 +142,6 @@ advent_of_code_2021
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="find_0_6_9_digits/1">
-
-  <div class="detail-header">
-    <a href="#find_0_6_9_digits/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">find_0_6_9_digits(list)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="find_2_3_5_digits/1">
-
-  <div class="detail-header">
-    <a href="#find_2_3_5_digits/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">find_2_3_5_digits(pp)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="find_easy_digits/1">
-
-  <div class="detail-header">
-    <a href="#find_easy_digits/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">find_easy_digits(list)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="find_easy_digits_sec/1">
-
-  <div class="detail-header">
-    <a href="#find_easy_digits_sec/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">find_easy_digits_sec(pp)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="get_val_in/2">
-
-  <div class="detail-header">
-    <a href="#get_val_in/2" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_val_in(ten_patterns, val)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
 <section class="detail" id="part_01/1">
 
   <div class="detail-header">
@@ -281,7 +156,48 @@ Functions
 
   <section class="docstring">
 
-<p>part_01 doc TBD</p>
+<p>As your submarine slowly makes its way through the cave system, you notice that the four-digit seven-segment displays in your submarine are malfunctioning; they must have been damaged during the escape. You'll be in a lot of trouble without them, so you'd better figure out what's wrong.</p><p>Each digit of a seven-segment display is rendered by turning on or off any of seven segments named a through g:</p><pre><code class="makeup elixir"><span class="w">  </span><span class="mi">0</span><span class="p">:</span><span class="w">      </span><span class="mi">1</span><span class="p">:</span><span class="w">      </span><span class="mi">2</span><span class="p">:</span><span class="w">      </span><span class="mi">3</span><span class="p">:</span><span class="w">      </span><span class="mi">4</span><span class="p">:</span><span class="w">
+</span><span class="n">aaaa</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">    </span><span class="n">aaaa</span><span class="w">    </span><span class="n">aaaa</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">
+</span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">
+</span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">
+</span><span class="n">...</span><span class="o">.</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">    </span><span class="n">dddd</span><span class="w">    </span><span class="n">dddd</span><span class="w">    </span><span class="n">dddd</span><span class="w">
+</span><span class="n">e</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="n">e</span><span class="w">    </span><span class="o">.</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">
+</span><span class="n">e</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="n">e</span><span class="w">    </span><span class="o">.</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">
+</span><span class="n">gggg</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">    </span><span class="n">gggg</span><span class="w">    </span><span class="n">gggg</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">
+
+</span><span class="mi">5</span><span class="p">:</span><span class="w">      </span><span class="mi">6</span><span class="p">:</span><span class="w">      </span><span class="mi">7</span><span class="p">:</span><span class="w">      </span><span class="mi">8</span><span class="p">:</span><span class="w">      </span><span class="mi">9</span><span class="p">:</span><span class="w">
+</span><span class="n">aaaa</span><span class="w">    </span><span class="n">aaaa</span><span class="w">    </span><span class="n">aaaa</span><span class="w">    </span><span class="n">aaaa</span><span class="w">    </span><span class="n">aaaa</span><span class="w">
+</span><span class="n">b</span><span class="w">    </span><span class="o">.</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="o">.</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">
+</span><span class="n">b</span><span class="w">    </span><span class="o">.</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="o">.</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">  </span><span class="n">b</span><span class="w">    </span><span class="n">c</span><span class="w">
+</span><span class="n">dddd</span><span class="w">    </span><span class="n">dddd</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">    </span><span class="n">dddd</span><span class="w">    </span><span class="n">dddd</span><span class="w">
+</span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="n">e</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="n">e</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">
+</span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="n">e</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="n">e</span><span class="w">    </span><span class="n">f</span><span class="w">  </span><span class="o">.</span><span class="w">    </span><span class="n">f</span><span class="w">
+</span><span class="n">gggg</span><span class="w">    </span><span class="n">gggg</span><span class="w">    </span><span class="n">...</span><span class="o">.</span><span class="w">    </span><span class="n">gggg</span><span class="w">    </span><span class="n">gggg</span></code></pre><p>So, to render a 1, only segments c and f would be turned on; the rest would be off. To render a 7, only segments a, c, and f would be turned on.</p><p>The problem is that the signals which control the segments have been mixed up on each display. The submarine is still trying to display numbers by producing output on signal wires a through g, but those wires are connected to segments randomly. Worse, the wire/segment connections are mixed up separately for each four-digit display! (All of the digits within a display use the same connections, though.)</p><p>So, you might know that only signal wires b and g are turned on, but that doesn't mean segments b and g are turned on: the only digit that uses two segments is 1, so it must mean segments c and f are meant to be on. With just that information, you still can't tell which wire (b/g) goes to which segment (c/f). For that, you'll need to collect more information.</p><p>For each display, you watch the changing signals for a while, make a note of all ten unique signal patterns you see, and then write down a single four digit output value (your puzzle input). Using the signal patterns, you should be able to work out which pattern corresponds to which digit.</p><p>For example, here is what you might see in a single entry in your notes:</p><pre><code class="makeup elixir"><span class="n">acedgfb</span><span class="w"> </span><span class="n">cdfbe</span><span class="w"> </span><span class="n">gcdfa</span><span class="w"> </span><span class="n">fbcad</span><span class="w"> </span><span class="n">dab</span><span class="w"> </span><span class="n">cefabd</span><span class="w"> </span><span class="n">cdfgeb</span><span class="w"> </span><span class="n">eafb</span><span class="w"> </span><span class="n">cagedb</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">cdfeb</span><span class="w"> </span><span class="n">fcadb</span><span class="w"> </span><span class="n">cdfeb</span><span class="w"> </span><span class="n">cdbaf</span></code></pre><p>(The entry is wrapped here to two lines so it fits; in your notes, it will all be on a single line.)</p><p>Each entry consists of ten unique signal patterns, a | delimiter, and finally the four digit output value. Within an entry, the same wire/segment connections are used (but you don't know what the connections actually are). The unique signal patterns correspond to the ten different ways the submarine tries to render a digit using the current wire/segment connections. Because 7 is the only digit that uses three segments, dab in the above example means that to render a 7, signal lines d, a, and b are on. Because 4 is the only digit that uses four segments, eafb means that to render a 4, signal lines e, a, f, and b are on.</p><p>Using this information, you should be able to work out which combination of signal wires corresponds to each of the ten digits. Then, you can decode the four digit output value. Unfortunately, in the above example, all of the digits in the output value (cdfeb fcadb cdfeb cdbaf) use five segments and are more difficult to deduce.
+For now, focus on the easy digits. Consider this larger example:</p><pre><code class="makeup elixir"><span class="w">  </span><span class="n">be</span><span class="w"> </span><span class="n">cfbegad</span><span class="w"> </span><span class="n">cbdgef</span><span class="w"> </span><span class="n">fgaecd</span><span class="w"> </span><span class="n">cgeb</span><span class="w"> </span><span class="n">fdcge</span><span class="w"> </span><span class="n">agebfd</span><span class="w"> </span><span class="n">fecdb</span><span class="w"> </span><span class="n">fabcd</span><span class="w"> </span><span class="n">edb</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">fdgacbe</span><span class="w"> </span><span class="n">cefdb</span><span class="w"> </span><span class="n">cefbgd</span><span class="w"> </span><span class="n">gcbe</span><span class="w">
+</span><span class="n">edbfga</span><span class="w"> </span><span class="n">begcd</span><span class="w"> </span><span class="n">cbg</span><span class="w"> </span><span class="n">gc</span><span class="w"> </span><span class="n">gcadebf</span><span class="w"> </span><span class="n">fbgde</span><span class="w"> </span><span class="n">acbgfd</span><span class="w"> </span><span class="n">abcde</span><span class="w"> </span><span class="n">gfcbed</span><span class="w"> </span><span class="n">gfec</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">fcgedb</span><span class="w"> </span><span class="n">cgb</span><span class="w"> </span><span class="n">dgebacf</span><span class="w"> </span><span class="n">gc</span><span class="w">
+</span><span class="n">fgaebd</span><span class="w"> </span><span class="n">cg</span><span class="w"> </span><span class="n">bdaec</span><span class="w"> </span><span class="n">gdafb</span><span class="w"> </span><span class="n">agbcfd</span><span class="w"> </span><span class="n">gdcbef</span><span class="w"> </span><span class="n">bgcad</span><span class="w"> </span><span class="n">gfac</span><span class="w"> </span><span class="n">gcb</span><span class="w"> </span><span class="n">cdgabef</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">cg</span><span class="w"> </span><span class="n">cg</span><span class="w"> </span><span class="n">fdcagb</span><span class="w"> </span><span class="n">cbg</span><span class="w">
+</span><span class="n">fbegcd</span><span class="w"> </span><span class="n">cbd</span><span class="w"> </span><span class="n">adcefb</span><span class="w"> </span><span class="n">dageb</span><span class="w"> </span><span class="n">afcb</span><span class="w"> </span><span class="n">bc</span><span class="w"> </span><span class="n">aefdc</span><span class="w"> </span><span class="n">ecdab</span><span class="w"> </span><span class="n">fgdeca</span><span class="w"> </span><span class="n">fcdbega</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">efabcd</span><span class="w"> </span><span class="n">cedba</span><span class="w"> </span><span class="n">gadfec</span><span class="w"> </span><span class="n">cb</span><span class="w">
+</span><span class="n">aecbfdg</span><span class="w"> </span><span class="n">fbg</span><span class="w"> </span><span class="n">gf</span><span class="w"> </span><span class="n">bafeg</span><span class="w"> </span><span class="n">dbefa</span><span class="w"> </span><span class="n">fcge</span><span class="w"> </span><span class="n">gcbea</span><span class="w"> </span><span class="n">fcaegb</span><span class="w"> </span><span class="n">dgceab</span><span class="w"> </span><span class="n">fcbdga</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">gecf</span><span class="w"> </span><span class="n">egdcabf</span><span class="w"> </span><span class="n">bgf</span><span class="w"> </span><span class="n">bfgea</span><span class="w">
+</span><span class="n">fgeab</span><span class="w"> </span><span class="n">ca</span><span class="w"> </span><span class="n">afcebg</span><span class="w"> </span><span class="n">bdacfeg</span><span class="w"> </span><span class="n">cfaedg</span><span class="w"> </span><span class="n">gcfdb</span><span class="w"> </span><span class="n">baec</span><span class="w"> </span><span class="n">bfadeg</span><span class="w"> </span><span class="n">bafgc</span><span class="w"> </span><span class="n">acf</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">gebdcfa</span><span class="w"> </span><span class="n">ecba</span><span class="w"> </span><span class="n">ca</span><span class="w"> </span><span class="n">fadegcb</span><span class="w">
+</span><span class="n">dbcfg</span><span class="w"> </span><span class="n">fgd</span><span class="w"> </span><span class="n">bdegcaf</span><span class="w"> </span><span class="n">fgec</span><span class="w"> </span><span class="n">aegbdf</span><span class="w"> </span><span class="n">ecdfab</span><span class="w"> </span><span class="n">fbedc</span><span class="w"> </span><span class="n">dacgb</span><span class="w"> </span><span class="n">gdcebf</span><span class="w"> </span><span class="n">gf</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">cefg</span><span class="w"> </span><span class="n">dcbef</span><span class="w"> </span><span class="n">fcge</span><span class="w"> </span><span class="n">gbcadfe</span><span class="w">
+</span><span class="n">bdfegc</span><span class="w"> </span><span class="n">cbegaf</span><span class="w"> </span><span class="n">gecbf</span><span class="w"> </span><span class="n">dfcage</span><span class="w"> </span><span class="n">bdacg</span><span class="w"> </span><span class="n">ed</span><span class="w"> </span><span class="n">bedf</span><span class="w"> </span><span class="n">ced</span><span class="w"> </span><span class="n">adcbefg</span><span class="w"> </span><span class="n">gebcd</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">ed</span><span class="w"> </span><span class="n">bcgafe</span><span class="w"> </span><span class="n">cdgba</span><span class="w"> </span><span class="n">cbgef</span><span class="w">
+</span><span class="n">egadfb</span><span class="w"> </span><span class="n">cdbfeg</span><span class="w"> </span><span class="n">cegd</span><span class="w"> </span><span class="n">fecab</span><span class="w"> </span><span class="n">cgb</span><span class="w"> </span><span class="n">gbdefca</span><span class="w"> </span><span class="n">cg</span><span class="w"> </span><span class="n">fgcdab</span><span class="w"> </span><span class="n">egfdb</span><span class="w"> </span><span class="n">bfceg</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">gbdfcae</span><span class="w"> </span><span class="n">bgc</span><span class="w"> </span><span class="n">cg</span><span class="w"> </span><span class="n">cgb</span><span class="w">
+</span><span class="n">gcafb</span><span class="w"> </span><span class="n">gcf</span><span class="w"> </span><span class="n">dcaebfg</span><span class="w"> </span><span class="n">ecagb</span><span class="w"> </span><span class="n">gf</span><span class="w"> </span><span class="n">abcdeg</span><span class="w"> </span><span class="n">gaef</span><span class="w"> </span><span class="n">cafbge</span><span class="w"> </span><span class="n">fdbac</span><span class="w"> </span><span class="n">fegbdc</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">fgae</span><span class="w"> </span><span class="n">cfgab</span><span class="w"> </span><span class="n">fg</span><span class="w"> </span><span class="n">bagce</span></code></pre><p>  ecause the digits 1, 4, 7, and 8 each use a unique number of segments, you should be able to tell which combinations of signals correspond to those digits. Counting only digits in the output values (the part after | on each line), in the above example, there are 26 instances of digits that use a unique number of segments (highlighted above).</p><h2 id="part_01/1-in-the-output-values-how-many-times-do-digits-1-4-7-or-8-appear" class="section-heading">
+  <a href="#part_01/1-in-the-output-values-how-many-times-do-digits-1-4-7-or-8-appear" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  In the output values, how many times do digits 1, 4, 7, or 8 appear?
+</h2>
+
   </section>
 </section>
 <section class="detail" id="part_02/1">
@@ -298,7 +214,39 @@ Functions
 
   <section class="docstring">
 
-<p>part_02 doc TBD</p>
+<p>Through a little deduction, you should now be able to determine the remaining digits. Consider again the first example above:</p><pre><code class="makeup elixir"><span class="n">acedgfb</span><span class="w"> </span><span class="n">cdfbe</span><span class="w"> </span><span class="n">gcdfa</span><span class="w"> </span><span class="n">fbcad</span><span class="w"> </span><span class="n">dab</span><span class="w"> </span><span class="n">cefabd</span><span class="w"> </span><span class="n">cdfgeb</span><span class="w"> </span><span class="n">eafb</span><span class="w"> </span><span class="n">cagedb</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="n">cdfeb</span><span class="w"> </span><span class="n">fcadb</span><span class="w"> </span><span class="n">cdfeb</span><span class="w"> </span><span class="n">cdbaf</span></code></pre><p>After some careful analysis, the mapping between signal wires and segments only make sense in the following configuration:</p><pre><code class="makeup elixir"><span class="n">dddd</span><span class="w">
+</span><span class="n">e</span><span class="w">    </span><span class="n">a</span><span class="w">
+</span><span class="n">e</span><span class="w">    </span><span class="n">a</span><span class="w">
+</span><span class="n">ffff</span><span class="w">
+</span><span class="n">g</span><span class="w">    </span><span class="n">b</span><span class="w">
+</span><span class="n">g</span><span class="w">    </span><span class="n">b</span><span class="w">
+</span><span class="n">cccc</span></code></pre><p>So, the unique signal patterns would correspond to the following digits:</p><pre><code class="makeup elixir"><span class="ss">acedgfb</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+</span><span class="ss">cdfbe</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="ss">gcdfa</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="ss">fbcad</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="ss">dab</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+</span><span class="ss">cefabd</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+</span><span class="ss">cdfgeb</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+</span><span class="ss">eafb</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="ss">cagedb</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="ss">ab</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span></code></pre><p>Then, the four digits of the output value can be decoded:</p><pre><code class="makeup elixir"><span class="ss">cdfeb</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="ss">fcadb</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="ss">cdfeb</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="ss">cdbaf</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span></code></pre><p>Therefore, the output value for this entry is 5353.</p><p>Following this same process for each entry in the second, larger example above, the output value of each entry can be determined:</p><pre><code class="makeup elixir"><span class="n">fdgacbe</span><span class="w"> </span><span class="n">cefdb</span><span class="w"> </span><span class="n">cefbgd</span><span class="w"> </span><span class="ss">gcbe</span><span class="p">:</span><span class="w"> </span><span class="mi">8394</span><span class="w">
+</span><span class="n">fcgedb</span><span class="w"> </span><span class="n">cgb</span><span class="w"> </span><span class="n">dgebacf</span><span class="w"> </span><span class="ss">gc</span><span class="p">:</span><span class="w"> </span><span class="mi">9781</span><span class="w">
+</span><span class="n">cg</span><span class="w"> </span><span class="n">cg</span><span class="w"> </span><span class="n">fdcagb</span><span class="w"> </span><span class="ss">cbg</span><span class="p">:</span><span class="w"> </span><span class="mi">1197</span><span class="w">
+</span><span class="n">efabcd</span><span class="w"> </span><span class="n">cedba</span><span class="w"> </span><span class="n">gadfec</span><span class="w"> </span><span class="ss">cb</span><span class="p">:</span><span class="w"> </span><span class="mi">9361</span><span class="w">
+</span><span class="n">gecf</span><span class="w"> </span><span class="n">egdcabf</span><span class="w"> </span><span class="n">bgf</span><span class="w"> </span><span class="ss">bfgea</span><span class="p">:</span><span class="w"> </span><span class="mi">4873</span><span class="w">
+</span><span class="n">gebdcfa</span><span class="w"> </span><span class="n">ecba</span><span class="w"> </span><span class="n">ca</span><span class="w"> </span><span class="ss">fadegcb</span><span class="p">:</span><span class="w"> </span><span class="mi">8418</span><span class="w">
+</span><span class="n">cefg</span><span class="w"> </span><span class="n">dcbef</span><span class="w"> </span><span class="n">fcge</span><span class="w"> </span><span class="ss">gbcadfe</span><span class="p">:</span><span class="w"> </span><span class="mi">4548</span><span class="w">
+</span><span class="n">ed</span><span class="w"> </span><span class="n">bcgafe</span><span class="w"> </span><span class="n">cdgba</span><span class="w"> </span><span class="ss">cbgef</span><span class="p">:</span><span class="w"> </span><span class="mi">1625</span><span class="w">
+</span><span class="n">gbdfcae</span><span class="w"> </span><span class="n">bgc</span><span class="w"> </span><span class="n">cg</span><span class="w"> </span><span class="ss">cgb</span><span class="p">:</span><span class="w"> </span><span class="mi">8717</span><span class="w">
+</span><span class="n">fgae</span><span class="w"> </span><span class="n">cfgab</span><span class="w"> </span><span class="n">fg</span><span class="w"> </span><span class="ss">bagce</span><span class="p">:</span><span class="w"> </span><span class="mi">4315</span></code></pre><p>Adding all of the output values in this larger example produces 61229.</p><p>For each entry, determine all of the wire/segment connections and decode the four-digit output values.</p><h2 id="part_02/1-what-do-you-get-if-you-add-up-all-of-the-output-values" class="section-heading">
+  <a href="#part_02/1-what-do-you-get-if-you-add-up-all-of-the-output-values" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  What do you get if you add up all of the output values?
+</h2>
+
   </section>
 </section>
 
