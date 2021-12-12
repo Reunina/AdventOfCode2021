@@ -1,6 +1,6 @@
 defmodule Day10 do
   @moduledoc """
-  module doc TBD
+
   """
   @opening ["(", "<", "{", "["]
   @closing [")", ">", "}", "]"]
@@ -21,7 +21,7 @@ defmodule Day10 do
     ">" => 4
   }
   @doc """
-  part_01 doc TBD
+
   """
   def part_01(input) do
     input
@@ -81,7 +81,6 @@ defmodule Day10 do
   end
 
   @doc """
-  part_02 doc TBD
   """
   def part_02(input) do
     input

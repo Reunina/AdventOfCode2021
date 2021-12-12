@@ -136,7 +136,7 @@ defmodule Mix.Tasks.Create do
   end
 
   defp download_input!(day, year) do
-    {:ok, {{'HTTP/1.1', 200, 'OK'}, _, input}} =
+    request =
       :httpc.request(
         :get,
         {'https://adventofcode.com/#{year}/day/#{day |> Integer.parse() |> elem(0)}/input',
@@ -145,7 +145,10 @@ defmodule Mix.Tasks.Create do
         []
       )
 
-    input
+    case request do
+      {:ok, {{'HTTP/1.1', 200, 'OK'}, _, input}} = request -> input
+      _ -> IO.inspect("NOT YET")
+    end
   end
 
   defp headers,

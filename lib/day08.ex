@@ -67,7 +67,7 @@ defmodule Day08 do
 
   Using this information, you should be able to work out which combination of signal wires corresponds to each of the ten digits. Then, you can decode the four digit output value. Unfortunately, in the above example, all of the digits in the output value (cdfeb fcadb cdfeb cdbaf) use five segments and are more difficult to deduce.
   For now, focus on the easy digits. Consider this larger example:
-```
+  ```
     be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb |
   fdgacbe cefdb cefbgd gcbe
   edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec |
@@ -88,7 +88,7 @@ defmodule Day08 do
   gbdfcae bgc cg cgb
   gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc |
   fgae cfgab fg bagce
-```
+  ```
     ecause the digits 1, 4, 7, and 8 each use a unique number of segments, you should be able to tell which combinations of signals correspond to those digits. Counting only digits in the output values (the part after | on each line), in the above example, there are 26 instances of digits that use a unique number of segments (highlighted above).
 
   ## In the output values, how many times do digits 1, 4, 7, or 8 appear?
@@ -121,7 +121,7 @@ defmodule Day08 do
   @doc """
   Through a little deduction, you should now be able to determine the remaining digits. Consider again the first example above:
 
-```
+  ```
   acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab |
   cdfeb fcadb cdfeb cdbaf
   ```

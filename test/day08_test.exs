@@ -14,7 +14,6 @@ defmodule Day08Test do
   @real_input "inputs/day_08.txt"
 
   test "day 08 part 1" do
-
     assert 26 =
              @test_input
              |> FileReader.read_with_function(&read_parameters_only_four_digits/1)
