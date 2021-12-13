@@ -94,7 +94,9 @@ defmodule Day10 do
   defp deduce_completing_sequences(lines) do
     lines
     |> Enum.map(&Enum.reverse/1)
-    |> Enum.map(&Enum.map(&1,fn closing_character -> Map.get(@openings_for_closing, closing_character) end))
+    |> Enum.map(
+      &Enum.map(&1, fn closing_character -> Map.get(@openings_for_closing, closing_character) end)
+    )
     |> Enum.map(&Enum.reverse/1)
   end
 

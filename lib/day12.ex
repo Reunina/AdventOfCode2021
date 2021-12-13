@@ -110,56 +110,53 @@ defmodule Day12 do
 
 
   """
-  def part_01( {paths, graph}, starting_point) do
+  def part_01({paths, graph}, starting_point) do
     compute(paths, graph, starting_point, MapSet.new([starting_point]))
-    |> print_nice
-    |> Enum.count()
-
+    # |> print_nice
   end
 
-  defp compute( paths, graph, starting_point, visited) do
+  def compute(paths, graph, starting_point, visited) do
     graph
     |> Map.get(starting_point)
-    |> Enum.reject(fn accessible_point -> MapSet.member?(visited, accessible_point)  end)
-    |> Enum.flat_map(
-         fn
-           "end" -> [["end" | paths]]
-           point ->
-             compute(
-               [point | paths],
-               graph,
-               point,
-               (if lower_cave?(point), do:  MapSet.put(visited, point)  , else: visited)
-             )
-         end)
+    |> Enum.reject(fn accessible_point -> MapSet.member?(visited, accessible_point) end)
+    |> Enum.flat_map(fn
+      "end" ->
+        [["end" | paths]]
 
+      point ->
+        compute(
+          [point | paths],
+          graph,
+          point,
+          if(lower_cave?(point), do: MapSet.put(visited, point), else: visited)
+        )
+    end)
   end
-
 
   defp lower_cave?(s), do: s == String.downcase(s)
 
-
-
   defp pretty("end"), do: IO.ANSI.format([:green, "end"])
   defp pretty("start"), do: IO.ANSI.format([:green, "start -> "])
-  defp pretty(x) , do: "#{x} -> "
-
+  defp pretty(x), do: "#{x} -> "
 
   defp print_nice(paths) do
-
     IO.ANSI.enabled?()
+
     paths
     |> Enum.map(fn x -> x |> Enum.reject(fn n -> is_list(n) end) end)
-    |> Enum.map(fn l ->l
-               |>  Enum.concat(["start"])
-               |>  Enum.reverse()
-                        |> Enum.map(&pretty/1)
-                        |> Enum.join("")
+    |> Enum.map(fn l ->
+      l
+      |> Enum.concat(["start"])
+      |> Enum.reverse()
+      |> Enum.map(&pretty/1)
+      |> Enum.join("")
     end)
     |> Enum.join("\n")
     |> IO.puts()
+
     paths
   end
+
   @doc """
   After reviewing the available paths, you realize you might have time to visit a single small cave twice. Specifically, big caves can be visited any number of times, a single small cave can be visited at most twice, and the remaining small caves can be visited at most once. However, the caves named start and end can only be visited exactly once each: once you leave the start cave, you may not return to it, and once you reach the end cave, the path must end immediately.
 
@@ -209,55 +206,56 @@ defmodule Day12 do
   """
   def part_02({paths, graph}, starting_point) do
     compute_p2(paths, graph, starting_point, MapSet.new([starting_point]), MapSet.new([]), false)
-    |> print_nice
-    |> Enum.count()
-
+    # |> print_nice
   end
 
-  defp compute_p2( paths, graph, starting_point, visited, small_caves_visited, exception_made?) do
+  def compute_p2(paths, graph, starting_point, visited, small_caves_visited, exception_made?) do
     graph
     |> Map.get(starting_point)
     |> Enum.filter(fn accessible_point ->
-   not MapSet.member?(visited, accessible_point) or
-          (not exception_made? and MapSet.member?(small_caves_visited, accessible_point))
-         end)
-    |> Enum.flat_map(
-         fn
-           "end" -> [["end" | paths]]
-           point ->
-             {visited, exception_made?, small_caves_visited }=handle_exception(point,exception_made?, visited , small_caves_visited)
-             compute_p2(
-               [point | paths],
-               graph,
-               point,
-               visited,small_caves_visited,
-               exception_made?
-             )
-         end)
+      not MapSet.member?(visited, accessible_point) or
+        (not exception_made? and MapSet.member?(small_caves_visited, accessible_point))
+    end)
+    |> Enum.flat_map(fn
+      "end" ->
+        [["end" | paths]]
 
+      point ->
+        {visited, exception_made?, small_caves_visited} =
+          handle_exception(point, exception_made?, visited, small_caves_visited)
+
+        compute_p2(
+          [point | paths],
+          graph,
+          point,
+          visited,
+          small_caves_visited,
+          exception_made?
+        )
+    end)
   end
-  defp handle_exception(point,exception_made?, visited, small_caves_visited ) when point in ["start", "end"] , do:
-    {MapSet.put(visited, point), exception_made?, small_caves_visited }
-  defp handle_exception(point,true, visited, small_caves_visited) do
-      if lower_cave?(point) do
-        {MapSet.put(visited, point), true, small_caves_visited }
-      else
-        {visited, true, small_caves_visited}
-      end
-  end
-  defp handle_exception(point,false, visited, small_caves_visited) do
-      if lower_cave?(point) do
-          if MapSet.member?(small_caves_visited, point) do
-            {MapSet.put(visited, point), true, small_caves_visited}
-          else
-            {MapSet.put(visited, point), false, MapSet.put(small_caves_visited, point) }
-          end
-        else
-          {visited, false, small_caves_visited}
-      end
+
+  defp handle_exception(point, exception_made?, visited, small_caves_visited)
+       when point in ["start", "end"],
+       do: {MapSet.put(visited, point), exception_made?, small_caves_visited}
+
+  defp handle_exception(point, true, visited, small_caves_visited) do
+    if lower_cave?(point) do
+      {MapSet.put(visited, point), true, small_caves_visited}
+    else
+      {visited, true, small_caves_visited}
     end
+  end
 
-
-
-
+  defp handle_exception(point, false, visited, small_caves_visited) do
+    if lower_cave?(point) do
+      if MapSet.member?(small_caves_visited, point) do
+        {MapSet.put(visited, point), true, small_caves_visited}
+      else
+        {MapSet.put(visited, point), false, MapSet.put(small_caves_visited, point)}
+      end
+    else
+      {visited, false, small_caves_visited}
+    end
+  end
 end
