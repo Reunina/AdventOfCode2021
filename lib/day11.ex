@@ -444,7 +444,7 @@ defmodule Day11 do
   end
 
   defp step_for(octos, inc) do
-    n_octos = (if inc, do: octos |> increment_all , else: octos)
+    n_octos = if inc, do: octos |> increment_all, else: octos
 
     n_octos =
       n_octos
@@ -505,7 +505,7 @@ defmodule Day11 do
 
   defp increment_neighbors(direct_neighbors) do
     direct_neighbors
-    |> Enum.reject(fn {_, %{ nb_flash: nb_flash}} -> nb_flash > 0 end)
+    |> Enum.reject(fn {_, %{nb_flash: nb_flash}} -> nb_flash > 0 end)
     |> Enum.map(fn entry -> increment(entry) end)
     |> Enum.into(%{})
   end
@@ -548,7 +548,6 @@ defmodule Day11 do
       |> Map.put(:nb_flash, 1 + Map.get(a, :nb_flash, -1))
     end)
   end
-
 
   defp map_to_coordinates(input) do
     input
