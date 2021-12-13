@@ -1,6 +1,7 @@
 defmodule Day11 do
   @moduledoc """
-  # --- Dumbo Octopus ---
+  --- Dumbo Octopus ---
+  ---------------------
   You enter a large cavern full of rare bioluminescent dumbo octopuses! They seem to not like the Christmas lights on your submarine, so you turn them off for now.
   """
 

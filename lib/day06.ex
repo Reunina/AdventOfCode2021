@@ -1,6 +1,7 @@
 defmodule Day06 do
   @moduledoc """
-  # --- Lanternfish ---
+  --- Lanternfish ---
+  ---------------------
   The sea floor is getting steeper. Maybe the sleigh keys got carried this way?
   """
 

@@ -1,6 +1,7 @@
 defmodule Day03 do
   @moduledoc """
-  # --- Binary Diagnostic ---
+  --- Binary Diagnostic ---
+  ---------------------
   The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.
   """
 
