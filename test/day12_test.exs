@@ -11,7 +11,6 @@ defmodule Day12Test do
   @real_input "inputs/day_12.txt"
 
   test "day 12 part 1" do
-
     assert 10 =
              @test_input_small
              |> extract_data()

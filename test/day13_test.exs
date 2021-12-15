@@ -132,7 +132,8 @@ defmodule Day13Test do
              @real_input
              |> extract_data
              |> Day.part_02()
-             #|> Day.pretty_print("day 13, part 2")
+
+    # |> Day.pretty_print("day 13, part 2")
   end
 
   defp extract_data(filename) do

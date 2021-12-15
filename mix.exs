@@ -23,6 +23,7 @@ defmodule AdventOfCode2021.MixProject do
     [
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
       {:stream_data, "~> 0.5", only: :test},
+      {:pqueue2, "~> 0.4"},
       {:graphvix, "~> 1.0.0"}
     ]
   end
