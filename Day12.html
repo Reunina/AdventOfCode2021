@@ -4,45 +4,53 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="generator" content="ExDoc v0.29.0">
     <meta name="project" content="advent_of_code_2021 v0.1.0">
 
     <title>Day12 — advent_of_code_2021 v0.1.0</title>
-    <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
+    <link rel="stylesheet" href="dist/html-elixir-2YOS5DIE.css" />
 
-    <script src="dist/sidebar_items-e03b34890f.js"></script>
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
+    <script src="dist/sidebar_items-43D83B8B.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/app-a404e1e870b77c874f9e.js"></script>
+    <script async src="dist/html-XN2TSG4M.js"></script>
 
 
   </head>
-  <body data-type="modules">
+  <body data-type="modules" class="page-module">
     <script>
 
       try {
-        if (localStorage.getItem('night-mode') === 'true') {
-          document.body.classList.add('night-mode');
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
         }
       } catch (error) { }
     </script>
 
 <div class="main">
 
-<button class="sidebar-button sidebar-toggle">
-  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
 <section class="sidebar">
   <form class="sidebar-search" action="search.html">
     <button type="submit" class="search-button" aria-label="Submit Search">
-      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
     </button>
     <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
     </button>
     <label class="search-label">
+      <p class="sr-only">Search</p>
       <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
     </label>
   </form>
@@ -53,6 +61,7 @@
   </div>
 
   <div class="sidebar-header">
+
     <div class="sidebar-projectDetails">
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 advent_of_code_2021
@@ -61,43 +70,54 @@ advent_of_code_2021
         v0.1.0
       </strong>
     </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
 
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+        <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+
+    </ul>
   </div>
 
-  <ul class="sidebar-listNav">
-    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
-
-      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
-
-
-      <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
-
-  </ul>
   <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
 </section>
 
 <section class="content">
+  <output role="status" id="toast"></output>
   <div class="content-outer">
     <div id="content" class="content-inner">
 
 <h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
   <span translate="no">Day12</span> 
   <small class="app-vsn" translate="no">(advent_of_code_2021 v0.1.0)</small>
-
 
 </h1>
 
 
   <section id="moduledoc">
-<h1>--- Passage Pathing ---</h1><p>With your submarine's subterranean subsystems subsisting suboptimally, the only way you're getting out of this cave anytime soon is by finding a path yourself. Not just a path - the only way to know if you've found the best path is to find all of them.</p>
+<h2 id="module-passage-pathing" class="section-heading">
+  <a href="#module-passage-pathing" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">passage-pathing</p>
+  </a>
+  --- Passage Pathing ---
+</h2>
+<p>With your submarine's subterranean subsystems subsisting suboptimally, the only way you're getting out of this cave anytime soon is by finding a path yourself. Not just a path - the only way to know if you've found the best path is to find all of them.</p>
   </section>
 
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#summary">
-        <span class="icon-link" aria-hidden="true"></span>
+        <i class="ri-link-m" aria-hidden="true"></i>
         <span class="sr-only">Link to this section</span>
       </a>
       Summary
@@ -152,7 +172,7 @@ advent_of_code_2021
   <section id="functions" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
-        <span class="icon-link" aria-hidden="true"></span>
+        <i class="ri-link-m" aria-hidden="true"></i>
         <span class="sr-only">Link to this section</span>
       </a>
 Functions
@@ -162,7 +182,7 @@ Functions
 
   <div class="detail-header">
     <a href="#compute/4" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
+      <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">compute(paths, graph, starting_point, visited)</h1>
@@ -179,7 +199,7 @@ Functions
 
   <div class="detail-header">
     <a href="#compute_p2/6" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
+      <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">compute_p2(paths, graph, starting_point, visited, small_caves_visited, exception_made?)</h1>
@@ -196,7 +216,7 @@ Functions
 
   <div class="detail-header">
     <a href="#part_01/2" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
+      <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">part_01(arg, starting_point)</h1>
@@ -206,16 +226,16 @@ Functions
 
   <section class="docstring">
 
-<p>Fortunately, the sensors are still mostly working, and so you build a rough map of the remaining caves (your puzzle input). For example:</p><pre><code class="makeup elixir"><span class="n">start</span><span class="o">-</span><span class="nc">A</span><span class="w">
+<p>Fortunately, the sensors are still mostly working, and so you build a rough map of the remaining caves (your puzzle input). For example:</p><pre><code class="makeup elixir" translate="no"><span class="n">start</span><span class="o">-</span><span class="nc">A</span><span class="w">
 </span><span class="n">start</span><span class="o">-</span><span class="n">b</span><span class="w">
 </span><span class="nc">A</span><span class="o">-</span><span class="n">c</span><span class="w">
 </span><span class="nc">A</span><span class="o">-</span><span class="n">b</span><span class="w">
 </span><span class="n">b</span><span class="o">-</span><span class="n">d</span><span class="w">
 </span><span class="nc">A</span><span class="o">-</span><span class="k">end</span><span class="w">
-</span><span class="n">b</span><span class="o">-</span><span class="k">end</span></code></pre><p>This is a list of how all of the caves are connected. You start in the cave named start, and your destination is the cave named end. An entry like b-d means that cave b is connected to cave d - that is, you can move between them.</p><p>So, the above cave system looks roughly like this:</p><pre><code class="makeup elixir"><span class="w">  </span><span class="n">start</span><span class="w">
+</span><span class="n">b</span><span class="o">-</span><span class="k">end</span></code></pre><p>This is a list of how all of the caves are connected. You start in the cave named start, and your destination is the cave named end. An entry like b-d means that cave b is connected to cave d - that is, you can move between them.</p><p>So, the above cave system looks roughly like this:</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="n">start</span><span class="w">
   </span><span class="o">/</span><span class="w">   </span><span class="n">c</span><span class="o">--</span><span class="nc">A</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="n">b</span><span class="o">--</span><span class="n">d</span><span class="w">
      </span><span class="o">/</span><span class="w">
-   </span><span class="k">end</span></code></pre><p>Your goal is to find the number of distinct paths that start at start, end at end, and don't visit small caves more than once. There are two types of caves: big caves (written in uppercase, like A) and small caves (written in lowercase, like b). It would be a waste of time to visit any small cave more than once, but big caves are large enough that it might be worth visiting them multiple times. So, all paths you find should visit small caves at most once, and can visit big caves any number of times.</p><p>Given these rules, there are 10 paths through this example cave system:</p><pre><code class="makeup elixir"><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
+   </span><span class="k">end</span></code></pre><p>Your goal is to find the number of distinct paths that start at start, end at end, and don't visit small caves more than once. There are two types of caves: big caves (written in uppercase, like A) and small caves (written in lowercase, like b). It would be a waste of time to visit any small cave more than once, but big caves are large enough that it might be worth visiting them multiple times. So, all paths you find should visit small caves at most once, and can visit big caves any number of times.</p><p>Given these rules, there are 10 paths through this example cave system:</p><pre><code class="makeup elixir" translate="no"><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
@@ -224,7 +244,7 @@ Functions
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
-</span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">end</span></code></pre><p>(Each line in the above list corresponds to a single path; the caves visited by that path are listed in the order they are visited and separated by commas.)</p><p>Note that in this cave system, cave d is never visited by any path: to do so, cave b would need to be visited twice (once on the way to cave d and a second time when returning from cave d), and since cave b is small, this is not allowed.</p><p>Here is a slightly larger example:</p><pre><code class="makeup elixir"><span class="n">dc</span><span class="o">-</span><span class="k">end</span><span class="w">
+</span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">end</span></code></pre><p>(Each line in the above list corresponds to a single path; the caves visited by that path are listed in the order they are visited and separated by commas.)</p><p>Note that in this cave system, cave d is never visited by any path: to do so, cave b would need to be visited twice (once on the way to cave d and a second time when returning from cave d), and since cave b is small, this is not allowed.</p><p>Here is a slightly larger example:</p><pre><code class="makeup elixir" translate="no"><span class="n">dc</span><span class="o">-</span><span class="k">end</span><span class="w">
 </span><span class="nc">HN</span><span class="o">-</span><span class="n">start</span><span class="w">
 </span><span class="n">start</span><span class="o">-</span><span class="n">kj</span><span class="w">
 </span><span class="n">dc</span><span class="o">-</span><span class="n">start</span><span class="w">
@@ -233,7 +253,7 @@ Functions
 </span><span class="nc">HN</span><span class="o">-</span><span class="k">end</span><span class="w">
 </span><span class="n">kj</span><span class="o">-</span><span class="n">sa</span><span class="w">
 </span><span class="n">kj</span><span class="o">-</span><span class="nc">HN</span><span class="w">
-</span><span class="n">kj</span><span class="o">-</span><span class="n">dc</span></code></pre><p>The 19 paths through it are as follows:</p><pre><code class="makeup elixir"><span class="n">start</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="k">end</span><span class="w">
+</span><span class="n">kj</span><span class="o">-</span><span class="n">dc</span></code></pre><p>The 19 paths through it are as follows:</p><pre><code class="makeup elixir" translate="no"><span class="n">start</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="k">end</span><span class="w">
@@ -251,7 +271,7 @@ Functions
 </span><span class="n">start</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="nc">HN</span><span class="p">,</span><span class="k">end</span><span class="w">
-</span><span class="n">start</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="k">end</span></code></pre><p>Finally, this even larger example has 226 paths through it:</p><pre><code class="makeup elixir"><span class="n">fs</span><span class="o">-</span><span class="k">end</span><span class="w">
+</span><span class="n">start</span><span class="p">,</span><span class="n">kj</span><span class="p">,</span><span class="n">dc</span><span class="p">,</span><span class="k">end</span></code></pre><p>Finally, this even larger example has 226 paths through it:</p><pre><code class="makeup elixir" translate="no"><span class="n">fs</span><span class="o">-</span><span class="k">end</span><span class="w">
 </span><span class="n">he</span><span class="o">-</span><span class="nc">DX</span><span class="w">
 </span><span class="n">fs</span><span class="o">-</span><span class="n">he</span><span class="w">
 </span><span class="n">start</span><span class="o">-</span><span class="nc">DX</span><span class="w">
@@ -269,7 +289,9 @@ Functions
 </span><span class="n">zg</span><span class="o">-</span><span class="n">he</span><span class="w">
 </span><span class="n">pj</span><span class="o">-</span><span class="n">fs</span><span class="w">
 </span><span class="n">start</span><span class="o">-</span><span class="nc">RW</span></code></pre><h2 id="part_01/2-how-many-paths-through-this-cave-system-are-there-that-visit-small-caves-at-most-once" class="section-heading">
-  <a href="#part_01/2-how-many-paths-through-this-cave-system-are-there-that-visit-small-caves-at-most-once" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  <a href="#part_01/2-how-many-paths-through-this-cave-system-are-there-that-visit-small-caves-at-most-once" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">how-many-paths-through-this-cave-system-are-there-that-visit-small-caves-at-most-once</p>
+  </a>
   How many paths through this cave system are there that visit small caves at most once?
 </h2>
 
@@ -279,7 +301,7 @@ Functions
 
   <div class="detail-header">
     <a href="#part_02/2" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
+      <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">part_02(arg, starting_point)</h1>
@@ -289,7 +311,7 @@ Functions
 
   <section class="docstring">
 
-<p>After reviewing the available paths, you realize you might have time to visit a single small cave twice. Specifically, big caves can be visited any number of times, a single small cave can be visited at most twice, and the remaining small caves can be visited at most once. However, the caves named start and end can only be visited exactly once each: once you leave the start cave, you may not return to it, and once you reach the end cave, the path must end immediately.</p><p>Now, the 36 possible paths through the first example above are:</p><pre><code class="makeup elixir"><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
+<p>After reviewing the available paths, you realize you might have time to visit a single small cave twice. Specifically, big caves can be visited any number of times, a single small cave can be visited at most twice, and the remaining small caves can be visited at most once. However, the caves named start and end can only be visited exactly once each: once you leave the start cave, you may not return to it, and once you reach the end cave, the path must end immediately.</p><p>Now, the 36 possible paths through the first example above are:</p><pre><code class="makeup elixir" translate="no"><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
@@ -325,7 +347,9 @@ Functions
 </span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nc">A</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">end</span><span class="w">
 </span><span class="n">start</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">end</span></code></pre><p>The slightly larger example above now has 103 paths through it, and the even larger example now has 3509 paths through it.</p><h2 id="part_02/2-given-these-new-rules-how-many-paths-through-this-cave-system-are-there" class="section-heading">
-  <a href="#part_02/2-given-these-new-rules-how-many-paths-through-this-cave-system-are-there" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  <a href="#part_02/2-given-these-new-rules-how-many-paths-through-this-cave-system-are-there" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">given-these-new-rules-how-many-paths-through-this-cave-system-are-there</p>
+  </a>
   Given these new rules, how many paths through this cave system are there?
 </h2>
 
@@ -338,29 +362,11 @@ Functions
       <footer class="footer">
 
         <p>
-          <span class="line">
-            Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
-          </span>
-          <span class="line">
-            Designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
-          </span>
-        </p>
-        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.0) for the
 
-            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-          <button class="line footer-button display-shortcuts-help">
-            Display keyboard shortcuts
-          </button>
-          <button class="line footer-button display-quick-switch">
-            Go to a HexDocs package
-          </button>
-          <button class="line footer-button display-settings">
-            Settings
-          </button>
         </p>
       </footer>
     </div>

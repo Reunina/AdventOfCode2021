@@ -4,45 +4,53 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="generator" content="ExDoc v0.29.0">
     <meta name="project" content="advent_of_code_2021 v0.1.0">
 
     <title>Day03 — advent_of_code_2021 v0.1.0</title>
-    <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
+    <link rel="stylesheet" href="dist/html-elixir-2YOS5DIE.css" />
 
-    <script src="dist/sidebar_items-e03b34890f.js"></script>
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
+    <script src="dist/sidebar_items-43D83B8B.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/app-a404e1e870b77c874f9e.js"></script>
+    <script async src="dist/html-XN2TSG4M.js"></script>
 
 
   </head>
-  <body data-type="modules">
+  <body data-type="modules" class="page-module">
     <script>
 
       try {
-        if (localStorage.getItem('night-mode') === 'true') {
-          document.body.classList.add('night-mode');
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
         }
       } catch (error) { }
     </script>
 
 <div class="main">
 
-<button class="sidebar-button sidebar-toggle">
-  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
 <section class="sidebar">
   <form class="sidebar-search" action="search.html">
     <button type="submit" class="search-button" aria-label="Submit Search">
-      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
     </button>
     <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
     </button>
     <label class="search-label">
+      <p class="sr-only">Search</p>
       <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
     </label>
   </form>
@@ -53,6 +61,7 @@
   </div>
 
   <div class="sidebar-header">
+
     <div class="sidebar-projectDetails">
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 advent_of_code_2021
@@ -61,43 +70,54 @@ advent_of_code_2021
         v0.1.0
       </strong>
     </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
 
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+        <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+
+    </ul>
   </div>
 
-  <ul class="sidebar-listNav">
-    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
-
-      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
-
-
-      <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
-
-  </ul>
   <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
 </section>
 
 <section class="content">
+  <output role="status" id="toast"></output>
   <div class="content-outer">
     <div id="content" class="content-inner">
 
 <h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
   <span translate="no">Day03</span> 
   <small class="app-vsn" translate="no">(advent_of_code_2021 v0.1.0)</small>
-
 
 </h1>
 
 
   <section id="moduledoc">
-<h1>--- Binary Diagnostic ---</h1><p>The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.</p>
+<h2 id="module-binary-diagnostic" class="section-heading">
+  <a href="#module-binary-diagnostic" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">binary-diagnostic</p>
+  </a>
+  --- Binary Diagnostic ---
+</h2>
+<p>The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.</p>
   </section>
 
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#summary">
-        <span class="icon-link" aria-hidden="true"></span>
+        <i class="ri-link-m" aria-hidden="true"></i>
         <span class="sr-only">Link to this section</span>
       </a>
       Summary
@@ -136,7 +156,7 @@ advent_of_code_2021
   <section id="functions" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
-        <span class="icon-link" aria-hidden="true"></span>
+        <i class="ri-link-m" aria-hidden="true"></i>
         <span class="sr-only">Link to this section</span>
       </a>
 Functions
@@ -146,7 +166,7 @@ Functions
 
   <div class="detail-header">
     <a href="#part_01/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
+      <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">part_01(input)</h1>
@@ -156,7 +176,7 @@ Functions
 
   <section class="docstring">
 
-<p>The diagnostic report (your puzzle input) consists of a list of binary numbers which, when decoded properly, can tell you many useful things about the conditions of the submarine. The first parameter to check is the power consumption.</p><p>You need to use the binary numbers in the diagnostic report to generate two new binary numbers (called the gamma rate and the epsilon rate). The power consumption can then be found by multiplying the gamma rate by the epsilon rate.</p><p>Each bit in the gamma rate can be determined by finding the most common bit in the corresponding position of all numbers in the diagnostic report. For example, given the following diagnostic report:</p><pre><code class="makeup elixir"><span class="mi">00100</span><span class="w">
+<p>The diagnostic report (your puzzle input) consists of a list of binary numbers which, when decoded properly, can tell you many useful things about the conditions of the submarine. The first parameter to check is the power consumption.</p><p>You need to use the binary numbers in the diagnostic report to generate two new binary numbers (called the gamma rate and the epsilon rate). The power consumption can then be found by multiplying the gamma rate by the epsilon rate.</p><p>Each bit in the gamma rate can be determined by finding the most common bit in the corresponding position of all numbers in the diagnostic report. For example, given the following diagnostic report:</p><pre><code class="makeup elixir" translate="no"><span class="mi">00100</span><span class="w">
 </span><span class="mi">11110</span><span class="w">
 </span><span class="mi">10110</span><span class="w">
 </span><span class="mi">10111</span><span class="w">
@@ -168,7 +188,9 @@ Functions
 </span><span class="mi">11001</span><span class="w">
 </span><span class="mi">00010</span><span class="w">
 </span><span class="mi">01010</span></code></pre><p>Considering only the first bit of each number, there are five 0 bits and seven 1 bits. Since the most common bit is 1, the first bit of the gamma rate is 1.</p><p>The most common second bit of the numbers in the diagnostic report is 0, so the second bit of the gamma rate is 0.</p><p>The most common value of the third, fourth, and fifth bits are 1, 1, and 0, respectively, and so the final three bits of the gamma rate are 110.</p><p>So, the gamma rate is the binary number 10110, or 22 in decimal.</p><p>The epsilon rate is calculated in a similar way; rather than use the most common bit, the least common bit from each position is used. So, the epsilon rate is 01001, or 9 in decimal. Multiplying the gamma rate (22) by the epsilon rate (9) produces the power consumption, 198.</p><p>Use the binary numbers in your diagnostic report to calculate the gamma rate and epsilon rate, then multiply them together.</p><h2 id="part_01/1-what-is-the-power-consumption-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary" class="section-heading">
-  <a href="#part_01/1-what-is-the-power-consumption-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  <a href="#part_01/1-what-is-the-power-consumption-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">what-is-the-power-consumption-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary</p>
+  </a>
   What is the power consumption of the submarine? (Be sure to represent your answer in decimal, not binary.)
 </h2>
 
@@ -178,7 +200,7 @@ Functions
 
   <div class="detail-header">
     <a href="#part_02/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
+      <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">part_02(input)</h1>
@@ -193,7 +215,9 @@ The bit criteria depends on which type of rating value you want to find:</p></li
 For example, to determine the oxygen generator rating value using the same example diagnostic report from above:</p></li><li><p>Start with all 12 numbers and consider only the first bit of each number. There are more 1 bits (7) than 0 bits (5), so keep only the 7 numbers with a 1 in the first position: 11110, 10110, 10111, 10101, 11100, 10000, and 11001.</p></li><li><p>Then, consider the second bit of the 7 remaining numbers: there are more 0 bits (4) than 1 bits (3), so keep only the 4 numbers with a 0 in the second position: 10110, 10111, 10101, and 10000.</p></li><li><p>In the third position, three of the four numbers have a 1, so keep those three: 10110, 10111, and 10101.</p></li><li><p>In the fourth position, two of the three numbers have a 1, so keep those two: 10110 and 10111.</p></li><li><p>In the fifth position, there are an equal number of 0 bits and 1 bits (one each). So, to find the oxygen generator rating, keep the number with a 1 in that position: 10111.</p></li><li><p>As there is only one number left, stop; the oxygen generator rating is 10111, or 23 in decimal.
 Then, to determine the CO2 scrubber rating value from the same example above:</p></li><li><p>Start again with all 12 numbers and consider only the first bit of each number. There are fewer 0 bits (5) than 1 bits (7), so keep only the 5 numbers with a 0 in the first position: 00100, 01111, 00111, 00010, and 01010.</p></li><li><p>Then, consider the second bit of the 5 remaining numbers: there are fewer 1 bits (2) than 0 bits (3), so keep only the 2 numbers with a 1 in the second position: 01111 and 01010.</p></li><li><p>In the third position, there are an equal number of 0 bits and 1 bits (one each). So, to find the CO2 scrubber rating, keep the number with a 0 in that position: 01010.</p></li><li><p>As there is only one number left, stop; the CO2 scrubber rating is 01010, or 10 in decimal.
 Finally, to find the life support rating, multiply the oxygen generator rating (23) by the CO2 scrubber rating (10) to get 230.</p></li></ul><p>Use the binary numbers in your diagnostic report to calculate the oxygen generator rating and CO2 scrubber rating, then multiply them together.</p><h2 id="part_02/1-what-is-the-life-support-rating-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary" class="section-heading">
-  <a href="#part_02/1-what-is-the-life-support-rating-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  <a href="#part_02/1-what-is-the-life-support-rating-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">what-is-the-life-support-rating-of-the-submarine-be-sure-to-represent-your-answer-in-decimal-not-binary</p>
+  </a>
   What is the life support rating of the submarine? (Be sure to represent your answer in decimal, not binary.)
 </h2>
 
@@ -206,29 +230,11 @@ Finally, to find the life support rating, multiply the oxygen generator rating (
       <footer class="footer">
 
         <p>
-          <span class="line">
-            Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
-          </span>
-          <span class="line">
-            Designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
-          </span>
-        </p>
-        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.0) for the
 
-            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-          <button class="line footer-button display-shortcuts-help">
-            Display keyboard shortcuts
-          </button>
-          <button class="line footer-button display-quick-switch">
-            Go to a HexDocs package
-          </button>
-          <button class="line footer-button display-settings">
-            Settings
-          </button>
         </p>
       </footer>
     </div>

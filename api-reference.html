@@ -4,45 +4,53 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="generator" content="ExDoc v0.29.0">
     <meta name="project" content="advent_of_code_2021 v0.1.0">
 
     <title>API Reference — advent_of_code_2021 v0.1.0</title>
-    <link rel="stylesheet" href="dist/elixir-b5076885a795c65e636c.css" />
+    <link rel="stylesheet" href="dist/html-elixir-2YOS5DIE.css" />
 
-    <script src="dist/sidebar_items-e03b34890f.js"></script>
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
+    <script src="dist/sidebar_items-43D83B8B.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/app-a404e1e870b77c874f9e.js"></script>
+    <script async src="dist/html-XN2TSG4M.js"></script>
 
 
   </head>
-  <body data-type="extras">
+  <body data-type="extras" class="page-extra">
     <script>
 
       try {
-        if (localStorage.getItem('night-mode') === 'true') {
-          document.body.classList.add('night-mode');
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
         }
       } catch (error) { }
     </script>
 
 <div class="main">
 
-<button class="sidebar-button sidebar-toggle">
-  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
 <section class="sidebar">
   <form class="sidebar-search" action="search.html">
     <button type="submit" class="search-button" aria-label="Submit Search">
-      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
     </button>
     <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
     </button>
     <label class="search-label">
+      <p class="sr-only">Search</p>
       <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
     </label>
   </form>
@@ -53,6 +61,7 @@
   </div>
 
   <div class="sidebar-header">
+
     <div class="sidebar-projectDetails">
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 advent_of_code_2021
@@ -61,35 +70,42 @@ advent_of_code_2021
         v0.1.0
       </strong>
     </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
 
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+        <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+
+    </ul>
   </div>
 
-  <ul class="sidebar-listNav">
-    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
-
-      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
-
-
-      <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
-
-  </ul>
   <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
 </section>
 
 <section class="content">
+  <output role="status" id="toast"></output>
   <div class="content-outer">
     <div id="content" class="content-inner">
 
-<h1 id="content">
-API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
 
+
+  <span>API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small></span>
 </h1>
 
 
   <section class="details-list">
     <h2 id="modules" class="section-heading">
-  <a href="#modules" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  <a href="#modules" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">modules</p>
+  </a>
   Modules
 </h2>
 
@@ -100,7 +116,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Sonar Sweep ---</h1><p>You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!</p></div>
+    <div class="summary-synopsis"><h2 id="sonar-sweep" class="section-heading">
+  <a href="#sonar-sweep" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">sonar-sweep</p>
+  </a>
+  --- Sonar Sweep ---
+</h2>
+<p>You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!</p></div>
 
 </div>
 <div class="summary-row">
@@ -109,7 +131,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Dive! ---</h1><p>Now, you need to figure out how to pilot this thing.</p></div>
+    <div class="summary-synopsis"><h2 id="dive" class="section-heading">
+  <a href="#dive" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">dive</p>
+  </a>
+  --- Dive! ---
+</h2>
+<p>Now, you need to figure out how to pilot this thing.</p></div>
 
 </div>
 <div class="summary-row">
@@ -118,7 +146,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Binary Diagnostic ---</h1><p>The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.</p></div>
+    <div class="summary-synopsis"><h2 id="binary-diagnostic" class="section-heading">
+  <a href="#binary-diagnostic" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">binary-diagnostic</p>
+  </a>
+  --- Binary Diagnostic ---
+</h2>
+<p>The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.</p></div>
 
 </div>
 <div class="summary-row">
@@ -127,7 +161,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Giant Squid ---</h1><p>You're already almost 1.5km (almost a mile) below the surface of the ocean, already so deep that you can't see any sunlight. What you can see, however, is a giant squid that has attached itself to the outside of your submarine.</p></div>
+    <div class="summary-synopsis"><h2 id="giant-squid" class="section-heading">
+  <a href="#giant-squid" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">giant-squid</p>
+  </a>
+  --- Giant Squid ---
+</h2>
+<p>You're already almost 1.5km (almost a mile) below the surface of the ocean, already so deep that you can't see any sunlight. What you can see, however, is a giant squid that has attached itself to the outside of your submarine.</p></div>
 
 </div>
 <div class="summary-row">
@@ -136,7 +176,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Hydrothermal Venture ---</h1><p>You come across a field of hydrothermal vents on the ocean floor! These vents constantly produce large, opaque clouds, so it would be best to avoid them if possible.</p></div>
+    <div class="summary-synopsis"><h2 id="hydrothermal-venture" class="section-heading">
+  <a href="#hydrothermal-venture" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">hydrothermal-venture</p>
+  </a>
+  --- Hydrothermal Venture ---
+</h2>
+<p>You come across a field of hydrothermal vents on the ocean floor! These vents constantly produce large, opaque clouds, so it would be best to avoid them if possible.</p></div>
 
 </div>
 <div class="summary-row">
@@ -145,7 +191,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Lanternfish ---</h1><p>The sea floor is getting steeper. Maybe the sleigh keys got carried this way?</p></div>
+    <div class="summary-synopsis"><h2 id="lanternfish" class="section-heading">
+  <a href="#lanternfish" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">lanternfish</p>
+  </a>
+  --- Lanternfish ---
+</h2>
+<p>The sea floor is getting steeper. Maybe the sleigh keys got carried this way?</p></div>
 
 </div>
 <div class="summary-row">
@@ -154,7 +206,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Day 7: The Treachery of Whales ---</h1><p>A giant whale has decided your submarine is its next meal, and it's much faster than you are. There's nowhere to run!</p></div>
+    <div class="summary-synopsis"><h2 id="the-treachery-of-whales" class="section-heading">
+  <a href="#the-treachery-of-whales" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">the-treachery-of-whales</p>
+  </a>
+  --- The Treachery of Whales ---
+</h2>
+<p>A giant whale has decided your submarine is its next meal, and it's much faster than you are. There's nowhere to run!</p></div>
 
 </div>
 <div class="summary-row">
@@ -163,7 +221,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Seven Segment Search ---</h1><p>You barely reach the safety of the cave when the whale smashes into the cave mouth, collapsing it. Sensors indicate another exit to this cave at a much greater depth, so you have no choice but to press on.</p></div>
+    <div class="summary-synopsis"><h2 id="seven-segment-search" class="section-heading">
+  <a href="#seven-segment-search" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">seven-segment-search</p>
+  </a>
+  --- Seven Segment Search ---
+</h2>
+<p>You barely reach the safety of the cave when the whale smashes into the cave mouth, collapsing it. Sensors indicate another exit to this cave at a much greater depth, so you have no choice but to press on.</p></div>
 
 </div>
 <div class="summary-row">
@@ -172,7 +236,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Smoke Basin ---</h1><p>These caves seem to be lava tubes. Parts are even still volcanically active; small hydrothermal vents release smoke into the caves that slowly settles like rain.</p></div>
+    <div class="summary-synopsis"><h2 id="smoke-basin" class="section-heading">
+  <a href="#smoke-basin" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">smoke-basin</p>
+  </a>
+  --- Smoke Basin ---
+</h2>
+<p>These caves seem to be lava tubes. Parts are even still volcanically active; small hydrothermal vents release smoke into the caves that slowly settles like rain.</p></div>
 
 </div>
 <div class="summary-row">
@@ -190,7 +260,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Dumbo Octopus ---</h1><p>You enter a large cavern full of rare bioluminescent dumbo octopuses! They seem to not like the Christmas lights on your submarine, so you turn them off for now.</p></div>
+    <div class="summary-synopsis"><h2 id="dumbo-octopus" class="section-heading">
+  <a href="#dumbo-octopus" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">dumbo-octopus</p>
+  </a>
+  --- Dumbo Octopus ---
+</h2>
+<p>You enter a large cavern full of rare bioluminescent dumbo octopuses! They seem to not like the Christmas lights on your submarine, so you turn them off for now.</p></div>
 
 </div>
 <div class="summary-row">
@@ -199,7 +275,13 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 
-    <div class="summary-synopsis"><h1>--- Passage Pathing ---</h1><p>With your submarine's subterranean subsystems subsisting suboptimally, the only way you're getting out of this cave anytime soon is by finding a path yourself. Not just a path - the only way to know if you've found the best path is to find all of them.</p></div>
+    <div class="summary-synopsis"><h2 id="passage-pathing" class="section-heading">
+  <a href="#passage-pathing" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">passage-pathing</p>
+  </a>
+  --- Passage Pathing ---
+</h2>
+<p>With your submarine's subterranean subsystems subsisting suboptimally, the only way you're getting out of this cave anytime soon is by finding a path yourself. Not just a path - the only way to know if you've found the best path is to find all of them.</p></div>
 
 </div>
 <div class="summary-row">
@@ -232,7 +314,9 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   <section class="details-list">
     <h2 id="mix-tasks" class="section-heading">
-  <a href="#mix-tasks" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  <a href="#mix-tasks" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">mix-tasks</p>
+  </a>
   Mix Tasks
 </h2>
 
@@ -258,33 +342,14 @@ API Reference <small class="app-vsn">advent_of_code_2021 v0.1.0</small>
 
   </div>
 </div>
-
       <footer class="footer">
 
         <p>
-          <span class="line">
-            Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
-          </span>
-          <span class="line">
-            Designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
-          </span>
-        </p>
-        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.0) for the
 
-            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-          <button class="line footer-button display-shortcuts-help">
-            Display keyboard shortcuts
-          </button>
-          <button class="line footer-button display-quick-switch">
-            Go to a HexDocs package
-          </button>
-          <button class="line footer-button display-settings">
-            Settings
-          </button>
         </p>
       </footer>
     </div>
