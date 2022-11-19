@@ -1,6 +1,7 @@
 defmodule Day08 do
   @moduledoc """
-  # --- Seven Segment Search ---
+  --- Seven Segment Search ---
+  ---------------------
   You barely reach the safety of the cave when the whale smashes into the cave mouth, collapsing it. Sensors indicate another exit to this cave at a much greater depth, so you have no choice but to press on.
 
   """

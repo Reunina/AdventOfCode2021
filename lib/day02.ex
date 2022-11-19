@@ -1,6 +1,9 @@
 defmodule Day02 do
   @moduledoc """
-  # --- Dive! ---
+  --- Dive! ---
+  ------------------
+
+
   Now, you need to figure out how to pilot this thing.
   """
 
